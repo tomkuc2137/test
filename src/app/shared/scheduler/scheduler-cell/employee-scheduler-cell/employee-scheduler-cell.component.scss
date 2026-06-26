@@ -1,0 +1,18 @@
+.employee-scheduler-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.visit-entry {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.visit-entry--deleted-patient .visit-entry__patient-name {
+  font-style: italic;
+  opacity: 0.75;
+}
