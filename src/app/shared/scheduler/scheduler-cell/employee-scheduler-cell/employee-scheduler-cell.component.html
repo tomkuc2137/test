@@ -1,0 +1,13 @@
+<div class="employee-scheduler-cell" [style.height.px]="cellHeight()">
+  @if (loading()) {
+    <span class="text-muted">Ładowanie...</span>
+  } @else {
+    @for (visit of visits(); track visit.id) {
+      <div class="visit-entry"
+           [class.visit-entry--deleted-patient]="visit.patientDeleted"
+           (click)="onVisitClick(visit.id)">
+        <span class="visit-entry__patient-name">{{ visit.patientDisplayName }}</span>
+      </div>
+    }
+  }
+</div>
