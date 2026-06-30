@@ -1,0 +1,78 @@
+@* Sekcja: Jakie są kroki do finansowania? *@
+
+<section class="bg-[#f3f3f5]" aria-labelledby="financing-steps-heading">
+    <div class="max-w-[1400px] mx-auto px-4 py-8 lg:pt-[60px] lg:pb-20">
+        <h2 id="financing-steps-heading" class="font-barlow font-semibold text-center text-[28px] lg:text-[44px] leading-[1.2] text-[#151515] mb-6 lg:mb-16">
+            Jakie są kroki do finansowania?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-8 lg:mb-16">
+            @{
+                var stepsRow1 = new[]
+                {
+                    new { Bg = "1-2.png", Icon = "Frame-2.png", Title = "Konsultacja telefoniczna<br>lub&nbsp;wiadomość e-mail", Text = "Skontaktuj się z nami telefonicznie lub mailowo. Wstępnie omówimy Twoje potrzeby, możliwości finansowe oraz&nbsp;odpowiemy na wszystkie pytania dotyczące finansowania." },
+                    new { Bg = "2-1.png", Icon = "Image-34.png", Title = "Spotkanie w biurze<br>u&nbsp;Pana Damiana", Text = "Podczas spotkania przeanalizujemy Twoją sytuację finansową, przedstawimy dostępne opcje oraz przygotujemy indywidualne rozwiązanie dopasowane do&nbsp;Twoich potrzeb." },
+                    new { Bg = "3-1.png", Icon = "Image-35.png", Title = "Wspólne wybranie najlepszej oferty aktualnie dostępnej na&nbsp;rynku", Text = "Porównamy aktualne oferty banków i wspólnie wybierzemy najkorzystniejszą opcję, zapewniając najlepsze warunki kredytowe." }
+                };
+            }
+            @foreach (var step in stepsRow1)
+            {
+                var bgUrl = Url.Content($"~/inc/img/{step.Bg}");
+                var iconUrl = Url.Content($"~/inc/img/{step.Icon}");
+                <article class="relative flex flex-col items-center justify-center text-center min-h-[280px] lg:min-h-[320px]">
+                    <div class="absolute inset-0 bg-center bg-no-repeat bg-[length:auto] pointer-events-none"
+                         style="background-image: url('@bgUrl');"
+                         aria-hidden="true"></div>
+                    <div class="relative z-[1] flex flex-col items-center gap-6 max-w-[360px] mx-auto px-2">
+                        <img src="@iconUrl"
+                             alt=""
+                             width="120"
+                             height="120"
+                             class="w-20 h-20 md:w-[120px] md:h-[120px] object-contain"
+                             loading="lazy" />
+                        <h3 class="font-barlow font-semibold text-[20px] lg:text-[24px] leading-[1.3] text-[#151515] m-0">
+                            @Html.Raw(step.Title)
+                        </h3>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#787878] m-0">
+                            @Html.Raw(step.Text)
+                        </p>
+                    </div>
+                </article>
+            }
+        </div>
+
+        <div class="max-w-[933px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            @{
+                var stepsRow2 = new[]
+                {
+                    new { Bg = "4.png", Icon = "Image-36.png", Title = "Dopełnienie formalności<br>przez&nbsp;eksperta", Text = "Nasz specjalista zajmie się kompletem dokumentów oraz&nbsp;przeprowadzi Cię przez cały proces formalny, oszczędzając Twój czas i stres." },
+                    new { Bg = "5.png", Icon = "Image-37.png", Title = "Podpisanie umowy kredytowej", Text = "Po pozytywnej decyzji banku podpisujesz umowę i&nbsp;możesz&nbsp;spokojnie realizować zakup swojej nieruchomości." }
+                };
+            }
+            @foreach (var step in stepsRow2)
+            {
+                var bgUrl = Url.Content($"~/inc/img/{step.Bg}");
+                var iconUrl = Url.Content($"~/inc/img/{step.Icon}");
+                <article class="relative flex flex-col items-center justify-center text-center min-h-[280px] lg:min-h-[320px]">
+                    <div class="absolute inset-0 bg-center bg-no-repeat bg-[length:auto] pointer-events-none"
+                         style="background-image: url('@bgUrl');"
+                         aria-hidden="true"></div>
+                    <div class="relative z-[1] flex flex-col items-center gap-6 max-w-[360px] mx-auto px-2">
+                        <img src="@iconUrl"
+                             alt=""
+                             width="120"
+                             height="120"
+                             class="w-20 h-20 md:w-[120px] md:h-[120px] object-contain"
+                             loading="lazy" />
+                        <h3 class="font-barlow font-semibold text-[20px] lg:text-[24px] leading-[1.3] text-[#151515] m-0">
+                            @Html.Raw(step.Title)
+                        </h3>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#787878] m-0">
+                            @Html.Raw(step.Text)
+                        </p>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
