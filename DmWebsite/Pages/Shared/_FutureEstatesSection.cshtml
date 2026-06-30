@@ -1,0 +1,172 @@
+@* Sekcja „Nasze osiedla tworzymy z myślą o przyszłości” – slider cech osiedla *@
+@{
+    var sectionBg = Url.Content("~/inc/img/Section_converted.avif");
+}
+
+<section class="relative overflow-hidden bg-dark text-white" aria-labelledby="future-estates-heading">
+    <div
+        class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
+        style="background-image: url('@sectionBg');"
+        aria-hidden="true">
+    </div>
+
+    <div class="relative max-w-[1680px] mx-auto px-4 py-16 md:py-20 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-start lg:items-center">
+            <div>
+                <img src="@Url.Content("~/inc/img/Icon-Box.png")" alt="" width="72" height="72" class="w-[72px] h-[72px] mb-8 object-contain" loading="lazy" />
+
+                <h2 id="future-estates-heading" class="font-barlow text-[28px] md:text-[32px] lg:text-[36px] font-bold leading-tight tracking-tight mb-6">
+                    Nasze osiedla tworzymy z myślą o&nbsp;przyszłości
+                </h2>
+
+                <div class="space-y-4 text-[18px] md:text-[20px] font-light leading-[1.5] text-white/95">
+                    <p>
+                        Stawiamy na&nbsp;unikalne rozwiązania, które łączą wygodę, funkcjonalność i&nbsp;nowoczesną technologię.
+                    </p>
+                    <p>
+                        W zabudowie jednorodzinnej znajdziecie m.in. komórki lokatorskie zapewniające dodatkową przestrzeń do przechowywania, gniazdka do&nbsp;ładowania samochodów elektrycznych przygotowane dla&nbsp;użytkowników e-mobility, a także strefy relaksu, takie jak prywatne sauny czy miejsca rekreacyjne z boiskiem do&nbsp;siatkówki.
+                    </p>
+                    <p>
+                        Dbamy również o inteligentną komunikację i bezpieczeństwo – nowoczesne domofony działające w technologii WiFi umożliwiają odbieranie połączeń bezpośrednio na telefon właściciela, a dedykowana aplikacja pozwala zarządzać dostępami oraz codziennymi sprawami mieszkańców.
+                    </p>
+                </div>
+
+                <div class="hidden lg:block w-full h-px bg-white/20 my-8" aria-hidden="true"></div>
+
+                <p class="hidden lg:block text-[18px] md:text-[20px] font-light leading-[1.5] text-white/95">
+                    To wszystko sprawia, że nasze inwestycje są nie tylko estetyczne i funkcjonalne, ale&nbsp;przede wszystkim wyjątkowe – tworzymy przestrzenie, które realnie podnoszą komfort codziennego życia.
+                </p>
+            </div>
+
+            <div class="future-estates-slider splide min-w-0 w-full" aria-label="Cechy naszych osiedli">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <article class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(0,0,0,0.25)] grid grid-cols-1 sm:grid-cols-[minmax(0,42%)_minmax(0,1fr)] min-h-[320px]">
+                                <div class="min-h-[180px] sm:min-h-full">
+                                    <img src="@Url.Content("~/inc/img/26523.jpg")" alt="" class="w-full h-full min-h-[180px] sm:min-h-[320px] object-cover" loading="lazy" />
+                                </div>
+                                <div class="p-8 md:p-10 flex flex-col justify-center">
+                                    <h3 class="font-barlow text-[20px] md:text-[24px] font-semibold text-dark mb-4 leading-snug">
+                                        Gniazdka przy miejscach parkingowych do ładowania aut elektrycznych
+                                    </h3>
+                                    <p class="text-[#595355] text-[15px] md:text-[16px] leading-[1.6]">
+                                        Gniazdka do ładowania samochodów elektrycznych to rozwiązanie, które odpowiada na rosnące potrzeby nowoczesnej mobilności. Przygotowana infrastruktura pozwala mieszkańcom wygodnie i bezpiecznie ładować swoje pojazdy bez konieczności korzystania z publicznych stacji. To nie tylko oszczędność czasu, ale także komfort codziennego użytkowania samochodu elektrycznego – ładowanie odbywa się dokładnie tam, gdzie mieszkasz. Dodatkowo instalacje są zaprojektowane w taki sposób, aby zapewnić wysoką wydajność, bezpieczeństwo oraz możliwość dalszej rozbudowy wraz z rozwojem elektromobilności.
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(0,0,0,0.25)] grid grid-cols-1 sm:grid-cols-[minmax(0,42%)_minmax(0,1fr)] min-h-[320px]">
+                                <div class="min-h-[180px] sm:min-h-full">
+                                    <img src="@Url.Content("~/inc/img/Depositphotos_226242700_L.jpg")" alt="" class="w-full h-full min-h-[180px] sm:min-h-[320px] object-cover" loading="lazy" />
+                                </div>
+                                <div class="p-8 md:p-10 flex flex-col justify-center">
+                                    <h3 class="font-barlow text-[20px] md:text-[24px] font-semibold text-dark mb-4 leading-snug">
+                                        Ogrzewanie podłogowe w całym mieszkaniu
+                                    </h3>
+                                    <p class="text-[#595355] text-[15px] md:text-[16px] leading-[1.6]">
+                                        W całym mieszkaniu zastosowano ogrzewanie podłogowe, które zapewnia równomierne rozprowadzanie ciepła i wysoki komfort użytkowania pomieszczeń. Dzięki temu wnętrza nagrzewają się w sposób naturalny, a temperatura jest stabilna i przyjemna w każdym miejscu domu. Brak tradycyjnych grzejników to również większa swoboda aranżacji przestrzeni oraz bardziej estetyczny wygląd pomieszczeń. Ogrzewanie podłogowe wpływa także na lepszą efektywność energetyczną budynku i pozwala stworzyć przyjazny mikroklimat we wnętrzu.
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(0,0,0,0.25)] grid grid-cols-1 sm:grid-cols-[minmax(0,42%)_minmax(0,1fr)] min-h-[320px]">
+                                <div class="min-h-[180px] sm:min-h-full">
+                                    <img src="@Url.Content("~/inc/img/26523.jpg")" alt="" class="w-full h-full min-h-[180px] sm:min-h-[320px] object-cover" loading="lazy" />
+                                </div>
+                                <div class="p-8 md:p-10 flex flex-col justify-center">
+                                    <h3 class="font-barlow text-[20px] md:text-[24px] font-semibold text-dark mb-4 leading-snug">
+                                        Pompa ciepła i ogrzewanie sterowane z aplikacji telefonu
+                                    </h3>
+                                    <p class="text-[#595355] text-[15px] md:text-[16px] leading-[1.6]">
+                                        Nowoczesna pompa ciepła stanowi ekologiczne i energooszczędne źródło ogrzewania budynku. System współpracuje z inteligentnym sterowaniem, które umożliwia zarządzanie temperaturą w domu za pomocą aplikacji w telefonie. Dzięki temu mieszkańcy mogą zdalnie kontrolować ogrzewanie, dostosowywać jego parametry do swoich potrzeb, a także planować harmonogramy pracy systemu. Takie rozwiązanie zwiększa komfort codziennego życia, jednocześnie pozwalając na optymalizację zużycia energii i obniżenie kosztów eksploatacji.
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="splide__slide">
+                            <article class="bg-white rounded-2xl overflow-hidden shadow-[0_8px_40px_-12px_rgba(0,0,0,0.25)] grid grid-cols-1 sm:grid-cols-[minmax(0,42%)_minmax(0,1fr)] min-h-[320px]">
+                                <div class="min-h-[180px] sm:min-h-full">
+                                    <img src="@Url.Content("~/inc/img/Depositphotos_226242700_L.jpg")" alt="" class="w-full h-full min-h-[180px] sm:min-h-[320px] object-cover" loading="lazy" />
+                                </div>
+                                <div class="p-8 md:p-10 flex flex-col justify-center">
+                                    <h3 class="font-barlow text-[20px] md:text-[24px] font-semibold text-dark mb-4 leading-snug">
+                                        Domofon wifi działający kompatybilnie z telefonem
+                                    </h3>
+                                    <p class="text-[#595355] text-[15px] md:text-[16px] leading-[1.6]">
+                                        Dbamy również o inteligentną komunikację i bezpieczeństwo – nowoczesne domofony działające w technologii WiFi umożliwiają odbieranie połączeń bezpośrednio na telefon właściciela, nawet wtedy, gdy nie ma go w domu. Dzięki temu można sprawdzić, kto znajduje się przy wejściu, porozmawiać z gościem lub kurierem, a w razie potrzeby zdalnie otworzyć furtkę czy drzwi. Dedykowana aplikacja pozwala także zarządzać dostępami dla domowników, gości czy serwisantów, co znacząco zwiększa wygodę i bezpieczeństwo codziennego funkcjonowania mieszkańców.
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="lg:hidden mt-10 text-[18px] md:text-[20px] font-light leading-[1.5] text-white/95">
+            To wszystko sprawia, że nasze inwestycje są nie tylko estetyczne i funkcjonalne, ale&nbsp;przede wszystkim wyjątkowe – tworzymy przestrzenie, które realnie podnoszą komfort codziennego życia.
+        </p>
+    </div>
+</section>
+
+<section class="lg:hidden bg-[#f3f3f5] py-10 md:py-12">
+    <div class="max-w-[1680px] mx-auto px-4">
+        <div
+            class="rounded-3xl min-h-[320px] sm:min-h-[466px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url('@sectionBg');">
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Widoczność przed inicjalizacją Splide (fade ukrywa slajdy w CSS) */
+    .future-estates-slider:not(.is-initialized) .splide__slide:first-child {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .future-estates-slider:not(.is-initialized) .splide__slide:not(:first-child) {
+        display: none;
+    }
+
+    .future-estates-slider .splide__arrow {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        opacity: 1;
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .future-estates-slider .splide__arrow:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    .future-estates-slider .splide__arrow svg {
+        fill: #fff;
+    }
+
+    .future-estates-slider .splide__pagination {
+        bottom: -2.5rem;
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    .future-estates-slider .splide__pagination__page {
+        background: rgba(255, 255, 255, 0.35);
+        opacity: 1;
+    }
+
+    .future-estates-slider .splide__pagination__page.is-active {
+        background: #ba9e60;
+        transform: scale(1.15);
+    }
+
+    @@media (min-width: 1024px) {
+        .future-estates-slider {
+            padding-bottom: 2.5rem;
+        }
+    }
+</style>
