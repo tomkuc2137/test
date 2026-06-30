@@ -10,31 +10,40 @@
 }
 
 <main class="bg-[#f3f3f5]">
-    @* Hero: tytuł + zdjęcie *@
-    <section class="bg-[#f3f3f5]" aria-labelledby="contact-page-heading">
-        <div class="max-w-[1680px] mx-auto px-4 py-6 md:py-6">
-            <div class="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 items-start">
-                <div class="flex flex-col justify-center pt-2 md:pt-0">
-                    <h1 id="contact-page-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] max-w-[686px] mb-0">
-                        Kontakt
-                    </h1>
+    @* Hero: napis wyśrodkowany w lewej strefie, zdjęcie do prawej krawędzi i nachodzi na formularz *@
+    <section class="relative bg-[#f3f3f5] overflow-visible" aria-labelledby="contact-page-heading">
+        <div class="flex flex-col lg:block">
+            @* Zdjęcie — większe, do prawej krawędzi viewportu, nachodzi na sekcję kontaktu *@
+            <div class="relative lg:absolute lg:top-0 lg:right-0 lg:left-auto w-full lg:w-[54vw] xl:w-[58vw] min-h-[167px] lg:min-h-[520px] xl:min-h-[580px] rounded-l-[40px] overflow-hidden bg-cover bg-center z-[2] lg:-mb-[55px] order-1 lg:order-none"
+                 style="background-image: url('@heroImage');"
+                 aria-hidden="true">
+            </div>
 
-                    @* Przyciski tylko mobile *@
-                    <div class="flex flex-col gap-2 mt-6 lg:hidden">
-                        <a href="#kontakt-zmiany-lokatorskie"
-                           class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
-                            Zmiany lokatorskie
-                        </a>
-                        <a href="/dopasuj-przestrzen-pod-siebie"
-                           class="block w-full text-center font-inter text-[18px] leading-tight text-[#151515] bg-[#f3f3f5] border border-[#c2c0c9] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
-                            Wykończenie wnętrza pod klucz
-                        </a>
+            <div class="relative z-[3] order-2 lg:order-none">
+                <div class="max-w-[1680px] mx-auto px-4 lg:px-0">
+                    <div class="flex flex-col lg:flex-row lg:min-h-[520px] xl:min-h-[580px]">
+                        @* Lewa strefa (~45%) — „Kontakt” na środku między lewą krawędzią a zdjęciem *@
+                        <div class="flex flex-col justify-center items-center lg:w-[42%] xl:w-[40%] py-8 lg:py-16 lg:pl-4 xl:pl-[130px] lg:pr-6">
+                            <h1 id="contact-page-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] text-center w-full">
+                                Kontakt
+                            </h1>
+
+                            @* Przyciski tylko mobile *@
+                            <div class="flex flex-col gap-2 mt-6 w-full lg:hidden">
+                                <a href="#kontakt-zmiany-lokatorskie"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Zmiany lokatorskie
+                                </a>
+                                <a href="/dopasuj-przestrzen-pod-siebie"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#151515] bg-[#f3f3f5] border border-[#c2c0c9] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Wykończenie wnętrza pod klucz
+                                </a>
+                            </div>
+                        </div>
+
+                        @* Prawa strefa — rezerwuje miejsce pod zdjęcie (absolute) *@
+                        <div class="hidden lg:block lg:flex-1 shrink-0 pointer-events-none" aria-hidden="true"></div>
                     </div>
-                </div>
-
-                <div class="relative -mb-0 lg:-mb-14 min-h-[167px] lg:min-h-[400px] rounded-l-[40px] overflow-hidden bg-cover bg-center"
-                     style="background-image: url('@heroImage');"
-                     aria-hidden="true">
                 </div>
             </div>
         </div>
