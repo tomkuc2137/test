@@ -1,0 +1,45 @@
+@page "/kontakt"
+@model DmWebsite.Pages.ContactModel
+@{
+    ViewData["Title"] = "Kontakt";
+    var heroImage = Url.Content("~/inc/img/DSC_6251.jpg.jpeg");
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage" />
+}
+
+<main class="bg-[#f3f3f5]">
+    @* Hero: tytuł + zdjęcie *@
+    <section class="bg-[#f3f3f5]" aria-labelledby="contact-page-heading">
+        <div class="max-w-[1680px] mx-auto px-4 py-6 md:py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 items-start">
+                <div class="flex flex-col justify-center pt-2 md:pt-0">
+                    <h1 id="contact-page-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] max-w-[686px] mb-0">
+                        Kontakt
+                    </h1>
+
+                    @* Przyciski tylko mobile *@
+                    <div class="flex flex-col gap-2 mt-6 lg:hidden">
+                        <a href="#kontakt-zmiany-lokatorskie"
+                           class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                            Zmiany lokatorskie
+                        </a>
+                        <a href="/dopasuj-przestrzen-pod-siebie"
+                           class="block w-full text-center font-inter text-[18px] leading-tight text-[#151515] bg-[#f3f3f5] border border-[#c2c0c9] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                            Wykończenie wnętrza pod klucz
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative -mb-0 lg:-mb-14 min-h-[167px] lg:min-h-[400px] rounded-l-[40px] overflow-hidden bg-cover bg-center"
+                     style="background-image: url('@heroImage');"
+                     aria-hidden="true">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <partial name="Shared/_ContactSection" />
+    <partial name="Shared/_ContactDepartmentsSection" />
+</main>
