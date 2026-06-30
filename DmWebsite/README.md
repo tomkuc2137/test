@@ -1,47 +1,64 @@
-# Forma Development – migracja WP → Razor
+# Forma Development – sekcja „Nasze osiedla”
 
-Fragmenty strony głównej (`Index.cshtml`) przeniesione z WordPress/Kadence na ASP.NET Razor Pages + Tailwind.
+## Dlaczego slider był niewidoczny
 
-## Sekcja „Nasze osiedla”
+1. **Race condition z CDN** – `future-estates-slider.js` uruchamiał się zanim załadował się globalny `Splide` z CDN → init kończył się cicho (`typeof Splide === 'undefined'`).
+2. **Fade przed init** – Splide CSS ukrywa nieaktywne slajdy; bez `mount()` wszystko wyglądało jak pusty blok.
+3. **Brak zdjęć w slajdach** – w WP każdy slajd ma kolumnę ze zdjęciem; sama karta tekstowa była mniej widoczna.
 
-### Pliki
+## Rozwiązanie
 
-| Plik | Opis |
-|------|------|
-| `Pages/Shared/_FutureEstatesSection.cshtml` | Partial z tekstem + sliderem Splide |
-| `wwwroot/js/future-estates-slider.js` | Inicjalizacja slidera (fade, strzałki, kropki) |
-| `Pages/Index.cshtml` | Przykład użycia po sekcji oferty |
+- Splide z **npm** + **TypeScript** (jak `initSliders` w Rytm Natury).
+- CSS Splide importowany w `main.ts`.
+- Init w `DOMContentLoaded` z bundlera (Vite), **nie** skryptów w partialu.
+- Ścieżki przez `Url.Content("~/inc/img/...")` zamiast `bg-[url('/inc/img/...')]` w Tailwind.
 
-### W `Index.cshtml` dodaj:
+## Instalacja
+
+```bash
+npm i @splidejs/splide
+```
+
+W `main.ts` (lub istniejącym entry point):
+
+```ts
+import '@splidejs/splide/css';
+import { initFutureEstatesSlider } from './future-estates-slider';
+
+document.addEventListener('DOMContentLoaded', () => {
+    initFutureEstatesSlider();
+    // initContactForm() itd.
+});
+```
+
+W `_Layout.cshtml`:
+
+```html
+<script type="module" src="~/js/main.js" asp-append-version="true"></script>
+```
+
+(budujesz `main.ts` → `wwwroot/js/main.js` przez Vite)
+
+## Assety w `wwwroot/inc/img/`
+
+| Plik | Użycie |
+|------|--------|
+| `Section_converted.avif` | Tło sekcji + blok mobilny |
+| `Icon-Box.png` | Ikona nad H2 |
+| `26523.jpg` | Slajdy 1 i 3 |
+| `Depositphotos_226242700_L.jpg` | Slajdy 2 i 4 |
+
+Jeśli masz 4 osobne zdjęcia – podmień `src` w partialu.
+
+## Ostrzeżenia IDE „Cannot resolve directory inc”
+
+To **nie błąd runtime** – Rider/VS nie rozumie `~/inc/img/` w Tailwind arbitrary `url()`.  
+`Url.Content()` w Razor + `style="background-image: url('...')"` usuwa problem.
+
+## Partial
 
 ```cshtml
 <partial name="Shared/_FutureEstatesSection" />
 ```
 
-(bezpośrednio po sekcji „Zobacz co możemy zaoferować”)
-
-### Assety do skopiowania z WP
-
-Umieść w `wwwroot/inc/img/`:
-
-- `Icon-Box.png` (72×72, dekoracja nad nagłówkiem)
-- `Image-8.png` (zdjęcie w bloku mobilnym, min. wys. ~466px)
-- opcjonalnie `future-estates-bg.jpg` – tło sekcji (ciemne zdjęcie osiedla); bez pliku sekcja ma jednolite tło `#151515`
-
-### Tailwind – tokeny używane w sekcji
-
-Upewnij się, że w `tailwind.config` masz m.in.:
-
-```js
-colors: {
-  main: '#ba9e60',
-  dark: '#151515',
-},
-fontFamily: {
-  barlow: ['Barlow', 'sans-serif'],
-},
-```
-
-### Splide
-
-Partial ładuje Splide 4 z CDN (jak w Kadence). Jeśli wolisz lokalnie: `npm i @splidejs/splide` i podmień linki w partialu.
+Bez `<script>` i bez CDN w partialu.
