@@ -33,7 +33,10 @@
 
         @* Desktop: 3 opinie na slajd, strzałki *@
         <div class="hidden lg:block">
-            <div class="financing-testimonials-slider financing-testimonials-slider--desktop splide" aria-label="Opinie klientów">
+            <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--desktop splide"
+                 data-splide-arrows="true"
+                 data-splide-pagination="false"
+                 aria-label="Opinie klientów">
                 <div class="splide__track">
                     <ul class="splide__list">
                         @for (var slideIndex = 0; slideIndex < 2; slideIndex++)
@@ -66,7 +69,10 @@
 
         @* Mobile: 1 opinia na slajd, kropki *@
         <div class="lg:hidden">
-            <div class="financing-testimonials-slider financing-testimonials-slider--mobile splide" aria-label="Opinie klientów">
+            <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--mobile splide"
+                 data-splide-arrows="false"
+                 data-splide-pagination="true"
+                 aria-label="Opinie klientów">
                 <div class="splide__track">
                     <ul class="splide__list">
                         @foreach (var item in testimonials)
