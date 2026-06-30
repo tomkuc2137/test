@@ -1,0 +1,136 @@
+@* Sekcja: Opinie klientów po współpracy z ekspertem *@
+@{
+    var googleReviewsUrl = "https://www.google.com/search?q=NOTUS+Opinie";
+
+    var testimonials = new[]
+    {
+        new
+        {
+            Name = "Magdalena",
+            Investment = "Aleja Zastavie",
+            Text = "Każdemu kto szuka pomocy w procesie uzyskania kredytu hipotecznego polecam usługi NOTUS Finanse, w szczególności pana Damiana Rusanowskiego, który&nbsp;pomógł mi przejść przez każdy etap, zawsze służył pomocą, odpowiadał wyczerpująco na każde pytanie, dopilnował każdego szczegółu oraz pomógł wybrać najlepszą ofertę. Dzięki naszej współpracy wszystko przebiegło sprawnie i bezstresowo :)."
+        },
+        new
+        {
+            Name = "Piotr",
+            Investment = "Aleja Zastavie",
+            Text = "Chcielibyśmy serdecznie podziękować Panu Damianowi Rusanowskiemu za profesjonalizm, a także wsparcie przez cały proces uzyskania kredytu hipotecznego na&nbsp;zakup nieruchomości. Polecamy Pana Damiana z&nbsp;całego serca. Ogromna wiedza, indywidualne podejście, dbałość o każdy szczegół to tylko niektóre z&nbsp;wielu zalet współpracy z Panem Damianem. Jeszcze raz serdecznie polecamy!"
+        },
+        new
+        {
+            Name = "Bożena",
+            Investment = "Aleja Zastavie",
+            Text = "Bardzo polecam współpracę z Panem Damianem Rusanowskim przy kredycie hipotecznym. Rzadko spotyka się człowieka z takim zaangażowaniem, profesjonalizmem i pasją. Cały proces przebiegł sprawnie. P. Damian towarzyszył nam na każdym etapie. Jestem bardzo wdzięczna za pomoc i opiekę w naszej sprawie."
+        }
+    };
+}
+
+<section class="bg-white" aria-labelledby="financing-testimonials-heading">
+    <div class="max-w-[1400px] mx-auto px-4 py-10 lg:py-20">
+        <h2 id="financing-testimonials-heading" class="font-barlow font-semibold text-center text-[28px] lg:text-[44px] leading-[1.2] text-[#151515] mb-8 lg:mb-12">
+            Opinie klientów po współpracy z ekspertem
+        </h2>
+
+        @* Desktop: 3 opinie na slajd, strzałki *@
+        <div class="hidden lg:block">
+            <div class="financing-testimonials-slider financing-testimonials-slider--desktop splide" aria-label="Opinie klientów">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @for (var slideIndex = 0; slideIndex < 2; slideIndex++)
+                        {
+                            <li class="splide__slide">
+                                <div class="grid grid-cols-3 gap-[30px]">
+                                    @foreach (var item in testimonials)
+                                    {
+                                        <partial name="Shared/_FinancingTestimonialCard" model="item" />
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-10">
+                <a href="@googleReviewsUrl"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 rounded-lg bg-[#151515] text-[#efeef3] font-inter text-[16px] px-8 py-[19px] border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                    Wszystkie opinie Google
+                    <svg class="w-6 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.5111 6.29102L24 11.9512L17.4155 17.7088L16.4348 16.588L20.8847 12.6974L0 12.7171V11.2288L20.8852 11.2096L16.5309 7.4118L17.5111 6.29102Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        @* Mobile: 1 opinia na slajd, kropki *@
+        <div class="lg:hidden">
+            <div class="financing-testimonials-slider financing-testimonials-slider--mobile splide" aria-label="Opinie klientów">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach (var item in testimonials)
+                        {
+                            <li class="splide__slide">
+                                <partial name="Shared/_FinancingTestimonialCard" model="item" />
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <a href="@googleReviewsUrl"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex items-center justify-center gap-2 w-full mt-8 rounded-lg bg-[#151515] text-[#efeef3] font-inter text-[16px] py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                Wszystkie opinie Google
+                <svg class="w-6 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.5111 6.29102L24 11.9512L17.4155 17.7088L16.4348 16.588L20.8847 12.6974L0 12.7171V11.2288L20.8852 11.2096L16.5309 7.4118L17.5111 6.29102Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .financing-testimonials-slider:not(.is-initialized) .splide__slide:first-child {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .financing-testimonials-slider:not(.is-initialized) .splide__slide:not(:first-child) {
+        display: none;
+    }
+
+    .financing-testimonials-slider--desktop .splide__arrow {
+        background: #fff;
+        border: 1px solid #c2c0c9;
+        opacity: 1;
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .financing-testimonials-slider--desktop .splide__arrow:hover {
+        background: #f3f3f5;
+    }
+
+    .financing-testimonials-slider--desktop .splide__arrow svg {
+        fill: #151515;
+    }
+
+    .financing-testimonials-slider--mobile .splide__pagination {
+        position: relative;
+        bottom: auto;
+        margin-top: 1.5rem;
+    }
+
+    .financing-testimonials-slider--mobile .splide__pagination__page {
+        background: #c2c0c9;
+        opacity: 1;
+    }
+
+    .financing-testimonials-slider--mobile .splide__pagination__page.is-active {
+        background: #ba9e60;
+        transform: scale(1.15);
+    }
+</style>
