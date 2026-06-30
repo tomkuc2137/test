@@ -1,0 +1,24 @@
+@*
+    Fragment do _Layout.cshtml — prawidłowa kolejność na /kontakt:
+    Hero (RenderBody) → Formularz → Działy → Footer
+
+    W layoucie zamień:
+        @RenderBody()
+        <partial name="Shared/_ContactSection" />
+        <partial name="_Footer" />
+
+    na:
+*@
+
+<main role="main" class="pb-3">
+    @RenderBody()
+
+    <partial name="Shared/_ContactSection" />
+
+    @if (IsSectionDefined("AfterContact"))
+    {
+        @await RenderSectionAsync("AfterContact", required: false)
+    }
+</main>
+
+<partial name="_Footer" />
