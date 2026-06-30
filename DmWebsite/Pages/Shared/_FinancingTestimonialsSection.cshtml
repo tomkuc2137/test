@@ -32,25 +32,27 @@
         </h2>
 
         @* Desktop: 3 opinie na slajd, strzałki *@
-        <div class="hidden lg:block">
-            <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--desktop splide"
-                 data-splide-arrows="true"
-                 data-splide-pagination="false"
-                 aria-label="Opinie klientów">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @for (var slideIndex = 0; slideIndex < 2; slideIndex++)
-                        {
-                            <li class="splide__slide">
-                                <div class="grid grid-cols-3 gap-[30px]">
-                                    @foreach (var item in testimonials)
-                                    {
-                                        <partial name="Shared/_FinancingTestimonialCard" model="item" />
-                                    }
-                                </div>
-                            </li>
-                        }
-                    </ul>
+        <div class="hidden lg:block px-[60px]">
+            <div class="financing-testimonials-slider-shell bg-[#f3f3f5] rounded-[24px] p-4 relative">
+                <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--desktop splide min-w-0 w-full"
+                     data-splide-arrows="true"
+                     data-splide-pagination="false"
+                     aria-label="Opinie klientów">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @for (var slideIndex = 0; slideIndex < 2; slideIndex++)
+                            {
+                                <li class="splide__slide">
+                                    <div class="grid grid-cols-3 gap-[30px]">
+                                        @foreach (var item in testimonials)
+                                        {
+                                            <partial name="Shared/_FinancingTestimonialCard" model="item" />
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -69,19 +71,21 @@
 
         @* Mobile: 1 opinia na slajd, kropki *@
         <div class="lg:hidden">
-            <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--mobile splide"
-                 data-splide-arrows="false"
-                 data-splide-pagination="true"
-                 aria-label="Opinie klientów">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        @foreach (var item in testimonials)
-                        {
-                            <li class="splide__slide">
-                                <partial name="Shared/_FinancingTestimonialCard" model="item" />
-                            </li>
-                        }
-                    </ul>
+            <div class="financing-testimonials-slider-shell bg-[#f3f3f5] rounded-[24px] p-4 relative">
+                <div class="splide-slider financing-testimonials-slider financing-testimonials-slider--mobile splide min-w-0 w-full"
+                     data-splide-arrows="false"
+                     data-splide-pagination="true"
+                     aria-label="Opinie klientów">
+                    <div class="splide__track pb-10">
+                        <ul class="splide__list">
+                            @foreach (var item in testimonials)
+                            {
+                                <li class="splide__slide">
+                                    <partial name="Shared/_FinancingTestimonialCard" model="item" />
+                                </li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -108,35 +112,60 @@
         display: none;
     }
 
-    .financing-testimonials-slider--desktop .splide__arrow {
-        background: #fff;
-        border: 1px solid #c2c0c9;
+    .financing-testimonials-slider-shell .splide__arrow {
+        width: 70px !important;
+        height: 70px !important;
+        opacity: 1 !important;
+        background: #fff !important;
+        border: none !important;
+        border-radius: 9999px !important;
+        font-size: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .financing-testimonials-slider-shell .splide__arrow svg {
+        fill: #ba9e60 !important;
+    }
+
+    @@media (min-width: 768px) {
+        .financing-testimonials-slider-shell .splide__arrow--prev {
+            left: -60px;
+        }
+
+        .financing-testimonials-slider-shell .splide__arrow--next {
+            right: -60px;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .financing-testimonials-slider-shell .splide__arrow {
+            display: none !important;
+        }
+    }
+
+    .financing-testimonials-slider-shell .splide__pagination {
+        bottom: 12px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 0;
+    }
+
+    .financing-testimonials-slider-shell .splide__pagination__page {
+        background: #c4c4c4;
         opacity: 1;
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 10px;
+        height: 10px;
     }
 
-    .financing-testimonials-slider--desktop .splide__arrow:hover {
-        background: #f3f3f5;
+    .financing-testimonials-slider-shell .splide__pagination__page.is-active {
+        background: #595355;
+        transform: scale(1.1);
     }
 
-    .financing-testimonials-slider--desktop .splide__arrow svg {
-        fill: #151515;
-    }
-
-    .financing-testimonials-slider--mobile .splide__pagination {
-        position: relative;
-        bottom: auto;
-        margin-top: 1.5rem;
-    }
-
-    .financing-testimonials-slider--mobile .splide__pagination__page {
-        background: #c2c0c9;
-        opacity: 1;
-    }
-
-    .financing-testimonials-slider--mobile .splide__pagination__page.is-active {
-        background: #ba9e60;
-        transform: scale(1.15);
+    @@media (max-width: 767px) {
+        .financing-testimonials-slider-shell {
+            overflow: hidden;
+        }
     }
 </style>
