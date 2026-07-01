@@ -14,10 +14,10 @@
             </p>
         </div>
 
-        <div class="bg-white rounded-[24px] max-w-[1200px] mx-auto px-5 py-8 lg:px-10 lg:py-12 xl:px-12 xl:py-14">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-start">
-                @* Lewa kolumna: ekspert *@
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div class="bg-white rounded-[24px] max-w-[1400px] mx-auto px-5 py-8 lg:px-10 lg:py-12 xl:px-12 xl:py-14">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-0 items-start">
+                @* Lewa kolumna: ekspert (~1/3) *@
+                <div class="flex flex-col items-center text-center lg:pr-10 xl:pr-12 lg:border-r lg:border-[#c2c0c9]">
                     <img src="@expertPhoto"
                          alt="Damian Rusanowski"
                          width="200"
@@ -26,12 +26,12 @@
                          loading="lazy" />
 
                     <h3 class="font-barlow font-semibold text-[24px] lg:text-[28px] leading-[1.3] text-[#151515] mb-6 m-0">
-                        Skontaktuj się<br class="hidden lg:block" /> z&nbsp;Damianem
+                        Skontaktuj się<br /> z&nbsp;Damianem
                     </h3>
 
-                    <div class="hidden lg:flex flex-col gap-2 w-full max-w-[420px]">
+                    <div class="flex flex-col gap-2 w-full max-w-[420px]">
                         <a href="mailto:damian.rusanowski@gmail.com"
-                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-[#efeef3] text-[#151515] font-inter text-[14px] lg:text-[15px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-white text-[#151515] font-inter text-[14px] lg:text-[15px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
                             <svg class="w-5 h-5 shrink-0 text-[#151515]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21ZM3 4.5C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5H3Z"/>
                                 <path d="M12.0001 13.4999C11.832 13.4999 11.6687 13.4434 11.5366 13.3394L1.0366 5.08944C0.957326 5.02923 0.890832 4.95384 0.840994 4.86767C0.791156 4.7815 0.758972 4.68626 0.746318 4.58752C0.733664 4.48878 0.740794 4.38851 0.767291 4.29256C0.793788 4.1966 0.839123 4.10688 0.900652 4.02862C0.962181 3.95037 1.03867 3.88514 1.12567 3.83676C1.21266 3.78837 1.30842 3.75778 1.40736 3.74678C1.5063 3.73578 1.60644 3.74459 1.70194 3.77269C1.79744 3.80079 1.88639 3.84761 1.9636 3.91044L12.0001 11.7959L22.0366 3.91044C22.1138 3.84761 22.2028 3.80079 22.2983 3.77269C22.3938 3.74459 22.4939 3.73578 22.5928 3.74678C22.6918 3.75778 22.7875 3.78837 22.8745 3.83676C22.9615 3.88514 23.038 3.95037 23.0996 4.02862C23.1611 4.10688 23.2064 4.1966 23.2329 4.29256C23.2594 4.38851 23.2665 4.48878 23.2539 4.58752C23.2412 4.68626 23.209 4.7815 23.1592 4.86767C23.1094 4.95384 23.0429 5.02923 22.9636 5.08944L12.4636 13.3394C12.3315 13.4434 12.1682 13.4999 12.0001 13.4999Z"/>
@@ -39,25 +39,7 @@
                             damian.rusanowski@gmail.com
                         </a>
                         <a href="tel:726260322"
-                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-[#efeef3] text-[#151515] font-inter text-[14px] lg:text-[15px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
-                            <svg class="w-5 h-5 shrink-0 text-[#151515]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M5.45898 0.520508C5.70132 0.462784 5.95351 0.460336 6.19727 0.511719C6.38011 0.550287 6.5552 0.618395 6.71484 0.713867L6.86914 0.818359C7.73493 1.48887 8.49046 2.28871 9.10938 3.19043C9.73092 4.09073 10.2062 5.08445 10.5156 6.13379C10.6199 6.47814 10.6122 6.84736 10.4912 7.18652C10.3701 7.52598 10.1426 7.81758 9.84277 8.01758L8.20703 9.11133C8.16032 9.13909 8.12528 9.17065 8.09766 9.20801C8.07008 9.24534 8.05017 9.28794 8.03906 9.33301C8.02798 9.37805 8.02613 9.42486 8.0332 9.4707C8.03676 9.4937 8.04281 9.51634 8.05078 9.53809L8.08301 9.60449C8.75813 10.8563 9.97505 12.2375 11 13.0967C12.0693 13.9882 13.2735 14.704 14.5674 15.2178C14.6457 15.2444 14.7309 15.2455 14.8096 15.2197C14.8889 15.1937 14.9575 15.142 15.0049 15.0732L16.2695 13.2559C16.4457 12.987 16.6966 12.7753 16.9912 12.6465C17.2873 12.5171 17.6151 12.4767 17.9336 12.5312C19.0209 12.714 20.0382 13.1888 20.877 13.9043C21.6109 14.5305 22.1843 15.3211 22.5518 16.209L22.6973 16.5957C22.7985 16.9139 22.7989 17.2535 22.7002 17.5703C22.5891 18.0468 22.4237 18.5096 22.207 18.9482C21.2294 20.752 19.5868 22.0967 17.6309 22.6982C17.4607 22.7505 17.2835 22.7757 17.1055 22.7744C13.2903 21.6259 10.2368 19.8731 7.64062 17.5547C4.07686 14.1941 1.8096 10.578 0.535156 6.57422C0.424832 6.24067 0.423796 5.88041 0.53418 5.54688C1.13629 3.58698 2.4846 1.94224 4.28809 0.966797C4.86198 0.712847 5.1542 0.608408 5.45215 0.522461L5.45898 0.520508ZM5.80566 1.79004C3.36428 2.95278 2.26058 4.31771 1.77344 5.93848C2.98479 9.9581 5.13447 13.3883 8.02441 16.1328C10.5842 18.5381 13.6505 20.3404 16.9971 21.4072C18.7868 20.9528 20.1178 19.9271 20.958 18.54C21.1321 16.1862 20.637 15.4452 19.9727 14.875C19.3072 14.3038 18.4978 13.9256 17.6328 13.7812C17.5636 13.7695 17.4926 13.7798 17.4287 13.8086L16.0557 15.7617C15.8466 16.0808 15.5352 16.3191 15.1719 16.4355C14.8086 16.552 14.4161 16.5404 14.0605 16.4023C11.0628 15.203 8.56024 13.0258 6.95898 10.2246C6.75813 9.85628 6.70042 9.42874 6.7959 9.02246C6.89138 8.61621 7.13347 8.2595 7.47559 8.02051L9.11523 6.97363C9.18413 6.92882 9.2365 6.86272 9.26367 6.78516C9.29083 6.70755 9.29154 6.62296 9.26562 6.54492L9.4082 6.49707C9.01356 5.61159 8.61828 4.73272 8.09082 3.93359C7.37484 2.97583 6.78111 2.3794 6.11523 1.87012C6.04867 1.81626 5.9692 1.78895 5.8877 1.79004H5.80566Z"/>
-                            </svg>
-                            726 260 322
-                        </a>
-                    </div>
-
-                    <div class="flex lg:hidden flex-col gap-2 w-full max-w-[420px]">
-                        <a href="mailto:damian.rusanowski@gmail.com"
-                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-[#efeef3] text-[#151515] font-inter text-[14px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
-                            <svg class="w-5 h-5 shrink-0 text-[#151515]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21ZM3 4.5C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5H3Z"/>
-                                <path d="M12.0001 13.4999C11.832 13.4999 11.6687 13.4434 11.5366 13.3394L1.0366 5.08944C0.957326 5.02923 0.890832 4.95384 0.840994 4.86767C0.791156 4.7815 0.758972 4.68626 0.746318 4.58752C0.733664 4.48878 0.740794 4.38851 0.767291 4.29256C0.793788 4.1966 0.839123 4.10688 0.900652 4.02862C0.962181 3.95037 1.03867 3.88514 1.12567 3.83676C1.21266 3.78837 1.30842 3.75778 1.40736 3.74678C1.5063 3.73578 1.60644 3.74459 1.70194 3.77269C1.79744 3.80079 1.88639 3.84761 1.9636 3.91044L12.0001 11.7959L22.0366 3.91044C22.1138 3.84761 22.2028 3.80079 22.2983 3.77269C22.3938 3.74459 22.4939 3.73578 22.5928 3.74678C22.6918 3.75778 22.7875 3.78837 22.8745 3.83676C22.9615 3.88514 23.038 3.95037 23.0996 4.02862C23.1611 4.10688 23.2064 4.1966 23.2329 4.29256C23.2594 4.38851 23.2665 4.48878 23.2539 4.58752C23.2412 4.68626 23.209 4.7815 23.1592 4.86767C23.1094 4.95384 23.0429 5.02923 22.9636 5.08944L12.4636 13.3394C12.3315 13.4434 12.1682 13.4999 12.0001 13.4999Z"/>
-                            </svg>
-                            damian.rusanowski@gmail.com
-                        </a>
-                        <a href="tel:726260322"
-                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-[#efeef3] text-[#151515] font-inter text-[14px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                           class="flex items-center justify-center gap-3 w-full rounded-lg bg-white text-[#151515] font-inter text-[14px] lg:text-[15px] py-4 px-5 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
                             <svg class="w-5 h-5 shrink-0 text-[#151515]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M5.45898 0.520508C5.70132 0.462784 5.95351 0.460336 6.19727 0.511719C6.38011 0.550287 6.5552 0.618395 6.71484 0.713867L6.86914 0.818359C7.73493 1.48887 8.49046 2.28871 9.10938 3.19043C9.73092 4.09073 10.2062 5.08445 10.5156 6.13379C10.6199 6.47814 10.6122 6.84736 10.4912 7.18652C10.3701 7.52598 10.1426 7.81758 9.84277 8.01758L8.20703 9.11133C8.16032 9.13909 8.12528 9.17065 8.09766 9.20801C8.07008 9.24534 8.05017 9.28794 8.03906 9.33301C8.02798 9.37805 8.02613 9.42486 8.0332 9.4707C8.03676 9.4937 8.04281 9.51634 8.05078 9.53809L8.08301 9.60449C8.75813 10.8563 9.97505 12.2375 11 13.0967C12.0693 13.9882 13.2735 14.704 14.5674 15.2178C14.6457 15.2444 14.7309 15.2455 14.8096 15.2197C14.8889 15.1937 14.9575 15.142 15.0049 15.0732L16.2695 13.2559C16.4457 12.987 16.6966 12.7753 16.9912 12.6465C17.2873 12.5171 17.6151 12.4767 17.9336 12.5312C19.0209 12.714 20.0382 13.1888 20.877 13.9043C21.6109 14.5305 22.1843 15.3211 22.5518 16.209L22.6973 16.5957C22.7985 16.9139 22.7989 17.2535 22.7002 17.5703C22.5891 18.0468 22.4237 18.5096 22.207 18.9482C21.2294 20.752 19.5868 22.0967 17.6309 22.6982C17.4607 22.7505 17.2835 22.7757 17.1055 22.7744C13.2903 21.6259 10.2368 19.8731 7.64062 17.5547C4.07686 14.1941 1.8096 10.578 0.535156 6.57422C0.424832 6.24067 0.423796 5.88041 0.53418 5.54688C1.13629 3.58698 2.4846 1.94224 4.28809 0.966797C4.86198 0.712847 5.1542 0.608408 5.45215 0.522461L5.45898 0.520508ZM5.80566 1.79004C3.36428 2.95278 2.26058 4.31771 1.77344 5.93848C2.98479 9.9581 5.13447 13.3883 8.02441 16.1328C10.5842 18.5381 13.6505 20.3404 16.9971 21.4072C18.7868 20.9528 20.1178 19.9271 20.958 18.54C21.1321 16.1862 20.637 15.4452 19.9727 14.875C19.3072 14.3038 18.4978 13.9256 17.6328 13.7812C17.5636 13.7695 17.4926 13.7798 17.4287 13.8086L16.0557 15.7617C15.8466 16.0808 15.5352 16.3191 15.1719 16.4355C14.8086 16.552 14.4161 16.5404 14.0605 16.4023C11.0628 15.203 8.56024 13.0258 6.95898 10.2246C6.75813 9.85628 6.70042 9.42874 6.7959 9.02246C6.89138 8.61621 7.13347 8.2595 7.47559 8.02051L9.11523 6.97363C9.18413 6.92882 9.2365 6.86272 9.26367 6.78516C9.29083 6.70755 9.29154 6.62296 9.26562 6.54492L9.4082 6.49707C9.01356 5.61159 8.61828 4.73272 8.09082 3.93359C7.37484 2.97583 6.78111 2.3794 6.11523 1.87012C6.04867 1.81626 5.9692 1.78895 5.8877 1.79004H5.80566Z"/>
                             </svg>
@@ -66,8 +48,8 @@
                     </div>
                 </div>
 
-                @* Prawa kolumna: formularz *@
-                <div>
+                @* Prawa kolumna: formularz (~2/3) *@
+                <div class="lg:pl-10 xl:pl-12 pt-8 lg:pt-0 border-t lg:border-t-0 border-[#c2c0c9]">
                     <p class="font-inter text-[16px] lg:text-[18px] leading-[1.5] text-[#151515] mb-3 m-0">
                         Wypełnij dane odnośnie swojego kredytu, a Damian oddzwoni do&nbsp;Ciebie i&nbsp;przedstawi wstępne informacje
                     </p>
@@ -75,10 +57,10 @@
                         Jest to forma kalkulatora kredytowego z tym, że w naszym wypadku nie dostajesz suchych informacji, ale również poradę ekspercką.
                     </p>
 
-                    <form id="financing-contact-form" class="space-y-4" action="/send-contact" method="post" novalidate>
+                    <form id="financing-contact-form" class="space-y-5" action="/send-contact" method="post" novalidate>
                         <input type="hidden" name="formType" value="financing" />
 
-                        <div class="bg-[#efeef3] rounded-lg px-4 py-4">
+                        <div>
                             <label for="financing-loan-amount" class="block text-[14px] font-medium text-[#151515] mb-2">
                                 Szacowana kwota kredytu [zł] <span class="text-[#ba9e60]">*</span>
                             </label>
@@ -89,10 +71,10 @@
                                    min="1"
                                    step="1"
                                    placeholder="np. 300000"
-                                   class="w-full rounded-lg border border-[#c2c0c9] bg-white px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
+                                   class="w-full rounded-lg border border-[#c2c0c9] bg-[#efeef3] px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
                         </div>
 
-                        <div class="bg-[#efeef3] rounded-lg px-4 py-4">
+                        <div>
                             <label for="financing-down-payment" class="block text-[14px] font-medium text-[#151515] mb-2">
                                 Szacowany wkład własny [zł] <span class="text-[#ba9e60]">*</span>
                             </label>
@@ -103,10 +85,10 @@
                                    min="0"
                                    step="1"
                                    placeholder="np. 300000"
-                                   class="w-full rounded-lg border border-[#c2c0c9] bg-white px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
+                                   class="w-full rounded-lg border border-[#c2c0c9] bg-[#efeef3] px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
                         </div>
 
-                        <div class="bg-[#efeef3] rounded-lg px-4 py-4">
+                        <div>
                             <label for="financing-loan-term" class="block text-[14px] font-medium text-[#151515] mb-2">
                                 Czas trwania kredytu [msc] <span class="text-[#ba9e60]">*</span>
                             </label>
@@ -117,7 +99,7 @@
                                    min="1"
                                    step="1"
                                    placeholder="np. 24"
-                                   class="w-full rounded-lg border border-[#c2c0c9] bg-white px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
+                                   class="w-full rounded-lg border border-[#c2c0c9] bg-[#efeef3] px-4 py-3 text-[16px] text-[#151515] placeholder:text-[#7c7476] focus:outline-none focus:ring-2 focus:ring-[#ba9e60]/40" />
                         </div>
 
                         <div>
