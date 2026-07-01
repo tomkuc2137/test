@@ -82,6 +82,8 @@
     };
 
     var vimeoBackgroundVideoUrl = "https://player.vimeo.com/video/1174678417?background=1&autoplay=1&muted=1&loop=1";
+    var partnerImage = Url.Content("~/inc/img/Image-10.png");
+    var partnerIcon = Url.Content("~/inc/img/Icon-Box-2.png");
 }
 
 @section Header {
@@ -338,5 +340,72 @@
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-[100vh] border-0 pointer-events-none"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="video"></iframe>
+    </section>
+
+    @* Partner NA.GOTOWO — desktop *@
+    <section class="hidden lg:block bg-[#f3f3f5] border-b border-[#c2c0c9]" aria-labelledby="partner-heading-desktop">
+        <div class="max-w-[1680px] mx-auto px-4 pt-[60px] pb-[100px]">
+            <div class="grid grid-cols-2 gap-8 xl:gap-12 items-center">
+                <figure class="m-0">
+                    <img src="@partnerImage"
+                         alt=""
+                         width="828"
+                         height="621"
+                         class="w-full h-auto"
+                         loading="lazy" />
+                </figure>
+
+                <div class="flex flex-col gap-6">
+                    <h2 id="partner-heading-desktop" class="font-barlow font-semibold text-[#151515] text-[36px] xl:text-[44px] leading-[1.2] m-0 max-w-[680px]">
+                        Poznaj naszego partnera remontowego firmę NA.GOTOWO
+                    </h2>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#151515] m-0 max-w-[610px]">
+                        Realizacja idealnego wnętrza to nie tylko dobry projekt, ale także sprawdzona ekipa, która potrafi zamienić wizję w rzeczywistość. Dlatego współpracujemy z naszym zaufanym partnerem – Na Gotowo, firmą specjalizującą się w kompleksowych pracach wykończeniowych. Dzięki wieloletniemu doświadczeniu, precyzji wykonania oraz dbałości o każdy detal, realizacje przebiegają sprawnie, profesjonalnie i zgodnie z najwyższymi standardami.
+                    </p>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#595355] m-0 max-w-[690px]">
+                        Na Gotowo to zespół fachowców, którzy doskonale rozumieją, jak ważna jest jakość, terminowość oraz dobra komunikacja podczas realizacji projektu. Ich podejście opiera się na rzetelnej pracy, nowoczesnych rozwiązaniach oraz pełnym zaangażowaniu na każdym etapie realizacji. Dzięki temu klienci mogą mieć pewność, że ich przestrzeń zostanie wykończona z największą starannością i zgodnie z założeniami projektu. Współpraca z zaufanym partnerem pozwala nam zapewnić spójność całego procesu – od pierwszej koncepcji, przez projekt, aż po finalne wykończenie wnętrza. Dzięki temu nasi klienci otrzymują kompleksową usługę, w której każdy etap jest dopracowany, a efekt końcowy spełnia najwyższe oczekiwania.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Partner NA.GOTOWO — mobile *@
+    <section class="lg:hidden bg-[#f3f3f5]" aria-labelledby="partner-heading-mobile">
+        <div class="max-w-[1680px] mx-auto px-4 py-[60px]">
+            <div class="flex items-center gap-4 mb-8">
+                <hr class="flex-1 border-0 border-t border-[#c2c0c9] m-0" />
+                <img src="@partnerIcon"
+                     alt=""
+                     width="72"
+                     height="72"
+                     class="w-[72px] h-[72px] object-contain shrink-0"
+                     loading="lazy" />
+                <hr class="flex-1 border-0 border-t border-[#c2c0c9] m-0" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+                <div class="flex flex-col gap-4">
+                    <h2 id="partner-heading-mobile" class="font-barlow font-semibold text-[#151515] text-[28px] leading-[1.2] m-0 pt-3.5">
+                        Kupujesz u nas mieszkanie i potrzebujesz wykończenia pod klucz?
+                    </h2>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#151515] m-0 pb-6 max-w-[610px]">
+                        Skorzystaj z naszej usługi wykończenia pod klucz realizowanej z partnerem NA.GOTOWO, który od lat należy do najlepszych specjalistów w branży.
+                    </p>
+                    <figure class="m-0">
+                        <img src="@partnerImage"
+                             alt=""
+                             width="828"
+                             height="621"
+                             class="w-full h-auto"
+                             loading="lazy" />
+                    </figure>
+                </div>
+
+                <p class="font-inter text-[14px] sm:text-[16px] leading-[1.5] text-[#595355] m-0 max-w-[690px]">
+                    Dzięki temu odbierzesz mieszkanie w pełni przygotowane do zamieszkania, bez stresu i nadzorowania ekip. Oferujemy <strong class="font-semibold text-[#151515]">trzy pakiety wykończenia</strong>, dopasowane do różnych potrzeb i budżetów: Standard, Komfort i Premium. Każdy z nich obejmuje kompleksowe prace, wysokiej jakości materiały i możliwość personalizacji. Niezależnie od oczekiwań – każdy znajdzie coś dla siebie i może wprowadzić się do gotowego, perfekcyjnie wykończonego wnętrza.
+                </p>
+            </div>
+        </div>
     </section>
 </main>
