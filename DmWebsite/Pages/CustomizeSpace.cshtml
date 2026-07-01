@@ -52,6 +52,34 @@
     };
 
     var turnKeyTypesBg = Url.Content("~/inc/img/Big-Image-Section.png");
+
+    var cooperationStages = new[]
+    {
+        new
+        {
+            NumberBg = "1-2.png",
+            Icon = "Frame-2.png",
+            Title = "Konsultacia i ustalenie potrzeb oraz zakresu pracy",
+            TitleLine2 = "",
+            Text = "Każda udana realizacja zaczyna się od rozmowy. Na tym etapie skupiamy się przede wszystkim na poznaniu Twoich oczekiwań, stylu życia oraz wizji przestrzeni, którą chcesz stworzyć. Analizujemy potrzeby funkcjonalne, estetyczne oraz budżetowe, aby jak najlepiej dopasować zakres prac do Twoich możliwości i planów. To moment, w którym możesz swobodnie opowiedzieć o swoich inspiracjach, pomysłach i priorytetach. My z kolei doradzamy, podpowiadamy rozwiązania i wskazujemy najlepsze kierunki działania. Dzięki temu już na początku budujemy jasny plan współpracy, który pozwala uniknąć niepotrzebnych niespodzianek na kolejnych etapach realizacji."
+        },
+        new
+        {
+            NumberBg = "2-1.png",
+            Icon = "Image-19.png",
+            Title = "Prace projektowe",
+            TitleLine2 = "i wybór materiałów",
+            Text = "Po ustaleniu wszystkich założeń przechodzimy do etapu projektowego, gdzie pomysły zaczynają przybierać realny kształt. Przygotowujemy koncepcję przestrzeni, dopracowujemy detale oraz dobieramy materiały, które nie tylko będą świetnie wyglądać, ale również sprawdzą się w codziennym użytkowaniu. To moment, w którym wspólnie wybieramy kolory, faktury, elementy wykończenia i rozwiązania techniczne. Dbamy o to, aby całość była spójna, funkcjonalna i ponadczasowa. Naszym celem jest stworzenie projektu, który będzie nie tylko estetyczny, ale przede wszystkim dopasowany do Twoich potrzeb i stylu życia."
+        },
+        new
+        {
+            NumberBg = "3-1.png",
+            Icon = "Image-20.png",
+            Title = "Prace wykończeniowe",
+            TitleLine2 = "i odbiór kluczy",
+            Text = "Gdy projekt jest dopracowany w każdym detalu, rozpoczyna się etap realizacji. To właśnie wtedy wizja zmienia się w rzeczywistość. Koordynujemy wszystkie prace wykończeniowe, dbamy o jakość wykonania oraz pilnujemy, aby każdy element został zrealizowany zgodnie z projektem. Na bieżąco monitorujemy postęp prac i rozwiązujemy ewentualne wyzwania, tak aby cały proces przebiegał sprawnie i bez stresu dla Ciebie. Finałem jest moment odbioru – chwila, w której możesz zobaczyć gotową przestrzeń i odebrać klucze do miejsca, które zostało stworzone dokładnie z myślą o Tobie."
+        }
+    };
 }
 
 @section Header {
@@ -259,6 +287,45 @@
                     }
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    @* Etapy współpracy *@
+    <section class="bg-[#f3f3f5]" aria-labelledby="cooperation-stages-heading">
+        <div class="max-w-[1400px] mx-auto px-4 py-8 lg:py-20">
+            <h2 id="cooperation-stages-heading" class="font-barlow font-semibold text-[#151515] text-[28px] lg:text-[36px] leading-[1.2] text-center m-0 mb-6 lg:mb-16">
+                Etapy współpracy
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
+                @foreach (var stage in cooperationStages)
+                {
+                    var numberBgUrl = Url.Content($"~/inc/img/{stage.NumberBg}");
+                    var iconUrl = Url.Content($"~/inc/img/{stage.Icon}");
+                    <article class="relative flex flex-col items-center text-center gap-4 lg:gap-6 bg-no-repeat bg-auto bg-[position:15px_35%] px-2 pb-2"
+                             style="background-image: url('@numberBgUrl');">
+                        <img src="@iconUrl"
+                             alt=""
+                             width="120"
+                             height="120"
+                             class="w-20 h-20 lg:w-[120px] lg:h-[120px] object-contain"
+                             loading="lazy" />
+                        <h3 class="font-barlow font-bold text-[#151515] text-[20px] lg:text-[24px] leading-[1.2] m-0">
+                            @if (string.IsNullOrEmpty(stage.TitleLine2))
+                            {
+                                @stage.Title
+                            }
+                            else
+                            {
+                                @stage.Title<br>@stage.TitleLine2
+                            }
+                        </h3>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#787878] m-0">
+                            @stage.Text
+                        </p>
+                    </article>
+                }
             </div>
         </div>
     </section>
