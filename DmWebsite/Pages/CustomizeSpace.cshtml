@@ -170,29 +170,29 @@
             </h2>
         </div>
 
-        <div class="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pb-10 lg:pb-16">
+        <div class="max-w-[1680px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 pb-10 lg:pb-16">
             <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] mb-8 lg:mb-12 text-center">
                 Mieszkanie pod klucz – jakie są plusy?
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 xl:gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 xl:gap-7">
                 @foreach (var benefit in turnKeyBenefits)
                 {
                     var iconUrl = Url.Content($"~/inc/img/{benefit.Icon}");
-                    <article class="flex flex-col h-full min-h-[260px] lg:min-h-[300px] bg-white rounded-[24px] p-8 lg:p-10 xl:p-12">
+                    <article class="flex flex-col h-full min-h-[240px] lg:min-h-[280px] bg-white rounded-[24px] p-6 lg:p-8 xl:p-9">
                         <img src="@iconUrl"
                              alt=""
                              width="88"
                              height="88"
                              class="w-[88px] h-[88px] lg:w-[100px] lg:h-[100px] object-contain"
                              loading="lazy" />
-                        <h4 class="font-barlow font-semibold text-[22px] lg:text-[26px] xl:text-[28px] leading-[1.3] text-[#151515] mt-6 lg:mt-8 mb-4 lg:mb-5 m-0">
+                        <h4 class="font-barlow font-semibold text-[20px] lg:text-[24px] leading-[1.3] text-[#151515] mt-6 lg:mt-7 mb-4 m-0">
                             @benefit.Title
                         </h4>
-                        <p class="font-inter text-[15px] lg:text-[17px] leading-[1.5] text-[#151515] m-0 mb-3 lg:mb-4">
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#151515] m-0 mb-3">
                             @benefit.Lead
                         </p>
-                        <p class="font-inter text-[15px] lg:text-[17px] leading-[1.5] text-[#595355] m-0 mt-auto max-w-[640px]">
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#595355] m-0 mt-auto">
                             @benefit.Text
                         </p>
                     </article>
