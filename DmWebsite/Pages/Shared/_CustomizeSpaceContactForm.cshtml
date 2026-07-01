@@ -1,0 +1,60 @@
+@{
+    var privacyPolicyUrl = "/polityka-prywatnosci/";
+}
+
+<form class="customize-space-contact-form space-y-6" method="post" novalidate>
+    <div>
+        <label for="contact-name" class="block font-inter text-[#151515] mb-3">
+            Podaj imię <span class="text-[#151515]">*</span>
+        </label>
+        <input type="text"
+               id="contact-name"
+               name="Name"
+               required
+               autocomplete="name"
+               placeholder="np. Kamil"
+               class="w-full font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+    </div>
+
+    <div>
+        <label for="contact-email" class="block font-inter text-[#151515] mb-3">
+            Podaj e-mail <span class="text-[#151515]">*</span>
+        </label>
+        <input type="email"
+               id="contact-email"
+               name="Email"
+               required
+               autocomplete="email"
+               placeholder="np. Kamil@gmail.com..."
+               class="w-full font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+    </div>
+
+    <div>
+        <label for="contact-message" class="block font-inter text-[#151515] mb-3">
+            Wiadomość <span class="text-[#151515]">*</span>
+        </label>
+        <textarea id="contact-message"
+                  name="Message"
+                  required
+                  rows="6"
+                  placeholder="Treść pytania lub wiadomości..."
+                  class="w-full min-h-[140px] font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515] resize-y"></textarea>
+    </div>
+
+    <div class="flex items-start gap-3">
+        <input type="checkbox"
+               id="contact-consent"
+               name="Consent"
+               required
+               value="true"
+               class="customize-space-contact-form__checkbox mt-1 shrink-0" />
+        <label for="contact-consent" class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#595355] m-0">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="@privacyPolicyUrl" class="text-[#151515] underline hover:opacity-80">Polityką Prywatności</a>.
+        </label>
+    </div>
+
+    <button type="submit"
+            class="inline-flex items-center justify-center font-inter text-[16px] text-[#efeef3] bg-[#151515] rounded-lg py-5 px-12 hover:opacity-90 transition-opacity">
+        Wyślij wiadomość
+    </button>
+</form>
