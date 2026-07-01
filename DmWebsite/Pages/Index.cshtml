@@ -1,0 +1,71 @@
+@page
+@model DmWebsite.Pages.Index
+@{
+    ViewData["Title"] = "Strona główna";
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage"/>
+}
+
+<main>
+    <section class="w-full h-[500px] bg-gray-200 flex items-center justify-center">
+        <span class="text-gray-500">[Miejsce na Slider Główny z CMS]</span>
+    </section>
+
+    <section class="bg-[#efeef3] py-20">
+        <div class="max-w-[1680px] mx-auto px-4">
+            <h2 class="font-barlow text-[32px] font-bold text-center text-dark mb-14 tracking-tight">
+                Zobacz co możemy zaoferować
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.15)] transition-shadow duration-300">
+                    <img src="~/inc/img/Image-51.png" alt="Mieszkania" class="w-24 h-24 mb-6 object-contain" />
+                    <h3 class="font-barlow text-[22px] font-bold text-dark mb-4">Mieszkania</h3>
+                    <a href="/mieszkania" class="flex items-center justify-center text-main text-[15px] font-medium hover:opacity-80 transition-opacity">
+                        Dowiedz się więcej
+                        <svg class="w-4 h-3 ml-2 fill-current" viewBox="0 0 16 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.6741 0L16 3.96584L11.6103 8L10.9566 7.21471L13.9231 4.48871L0 4.5025V3.45973L13.9234 3.44626L11.0206 0.785286L11.6741 0Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.15)] transition-shadow duration-300">
+                    <img src="~/inc/img/Offer-Icons-1.svg" alt="Domy" class="w-24 h-24 mb-6 object-contain" />
+                    <h3 class="font-barlow text-[22px] font-bold text-dark mb-4">Domy</h3>
+                    <a href="/domy" class="flex items-center justify-center text-main text-[15px] font-medium hover:opacity-80 transition-opacity">
+                        Dowiedz się więcej
+                        <svg class="w-4 h-3 ml-2 fill-current" viewBox="0 0 16 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.6741 0L16 3.96584L11.6103 8L10.9566 7.21471L13.9231 4.48871L0 4.5025V3.45973L13.9234 3.44626L11.0206 0.785286L11.6741 0Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.15)] transition-shadow duration-300">
+                    <img src="~/inc/img/Offer-Icons-2.svg" alt="Grunty" class="w-24 h-24 mb-6 object-contain" />
+                    <h3 class="font-barlow text-[22px] font-bold text-dark mb-4">Grunty</h3>
+                    <a href="/skup-gruntow" class="flex items-center justify-center text-main text-[15px] font-medium hover:opacity-80 transition-opacity">
+                        Dowiedz się więcej
+                        <svg class="w-4 h-3 ml-2 fill-current" viewBox="0 0 16 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.6741 0L16 3.96584L11.6103 8L10.9566 7.21471L13.9231 4.48871L0 4.5025V3.45973L13.9234 3.44626L11.0206 0.785286L11.6741 0Z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-2xl p-10 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.15)] transition-shadow duration-300">
+                    <img src="~/inc/img/Offer-Icons-3.svg" alt="Dopasuj przestrzeń pod siebie" class="w-24 h-24 mb-6 object-contain" />
+                    <h3 class="font-barlow text-[22px] font-bold text-dark mb-4 leading-tight">Dopasuj przestrzeń<br/>pod siebie</h3>
+                    <a href="/dopasuj-przestrzen-pod-siebie" class="flex items-center justify-center text-main text-[15px] font-medium hover:opacity-80 transition-opacity">
+                        Dowiedz się więcej
+                        <svg class="w-4 h-3 ml-2 fill-current" viewBox="0 0 16 8" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.6741 0L16 3.96584L11.6103 8L10.9566 7.21471L13.9231 4.48871L0 4.5025V3.45973L13.9234 3.44626L11.0206 0.785286L11.6741 0Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <partial name="Shared/_FutureEstatesSection" />
+</main>
