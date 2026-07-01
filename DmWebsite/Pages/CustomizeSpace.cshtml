@@ -171,7 +171,7 @@
         </div>
 
         <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px] pb-10 lg:pb-16">
-            <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] mb-8 lg:mb-12">
+            <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] mb-8 lg:mb-12 text-center">
                 Mieszkanie pod klucz – jakie są plusy?
             </h3>
 
@@ -179,7 +179,7 @@
                 @foreach (var benefit in turnKeyBenefits)
                 {
                     var iconUrl = Url.Content($"~/inc/img/{benefit.Icon}");
-                    <article class="flex flex-col h-full">
+                    <article class="flex flex-col h-full bg-white rounded-[24px] p-6 lg:p-8">
                         <img src="@iconUrl"
                              alt=""
                              width="88"
