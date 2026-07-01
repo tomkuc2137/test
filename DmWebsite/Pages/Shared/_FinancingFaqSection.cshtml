@@ -34,16 +34,16 @@
         <div class="financing-faq max-w-[1000px] mx-auto bg-white rounded-[24px] overflow-hidden divide-y divide-[#c2c0c9]">
             @foreach (var item in faqItems)
             {
-                <details name="financing-faq" class="group">
+                <details name="financing-faq" class="group/faq">
                     <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 lg:px-8 lg:py-6 font-barlow font-semibold text-[18px] lg:text-[20px] leading-[1.3] text-[#151515] hover:bg-[#fafafa] transition-colors">
-                        <span>@item.Question</span>
+                        <span class="financing-faq__question transition-colors duration-200">@item.Question</span>
                         <span class="financing-faq__icon shrink-0 inline-flex items-center justify-center w-6 h-6 text-[#ba9e60]" aria-hidden="true">
-                            <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-4 h-4 transition-transform duration-300 ease-out" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
                     </summary>
-                    <div class="px-6 pb-5 lg:px-8 lg:pb-6">
+                    <div class="financing-faq__panel px-6 lg:px-8">
                         <p class="font-inter text-[16px] lg:text-[18px] leading-[1.5] text-[#595355] m-0">
                             @item.Answer
                         </p>
@@ -61,5 +61,39 @@
 
     .financing-faq summary::marker {
         display: none;
+    }
+
+    .financing-faq details[open] .financing-faq__icon svg {
+        transform: rotate(180deg);
+    }
+
+    .financing-faq__panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: 0;
+        transition:
+            grid-template-rows 0.3s ease,
+            opacity 0.25s ease,
+            padding 0.3s ease;
+    }
+
+    .financing-faq details[open] .financing-faq__panel {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        padding-top: 0;
+        padding-bottom: 1.25rem;
+    }
+
+    @@media (min-width: 1024px) {
+        .financing-faq details[open] .financing-faq__panel {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .financing-faq__panel > p {
+        overflow: hidden;
+        min-height: 0;
     }
 </style>
