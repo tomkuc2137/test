@@ -9,9 +9,7 @@
 }
 
 <main>
-    <section class="w-full h-[500px] bg-gray-200 flex items-center justify-center">
-        <span class="text-gray-500">[Miejsce na Slider Główny z CMS]</span>
-    </section>
+    <partial name="Shared/_CurrentInvestmentsSection" model="Model.InvestmentSlides" />
 
     <section class="bg-[#efeef3] py-20">
         <div class="max-w-[1680px] mx-auto px-4">
@@ -69,3 +67,66 @@
 
     <partial name="Shared/_FutureEstatesSection" />
 </main>
+
+@section Styles {
+    <style>
+        .future-estates-slider:not(.is-initialized) .splide__slide:first-child {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .future-estates-slider:not(.is-initialized) .splide__slide:not(:first-child) {
+            display: none;
+        }
+
+        .future-estates-slider-shell .splide__arrow {
+            width: 70px !important;
+            height: 70px !important;
+            opacity: 1 !important;
+            background: #fff !important;
+            border: none !important;
+            border-radius: 9999px !important;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .future-estates-slider-shell .splide__arrow svg {
+            fill: #ba9e60 !important;
+        }
+
+        @@media (min-width: 768px) {
+            .future-estates-slider-shell .splide__arrow--prev { left: -60px; }
+            .future-estates-slider-shell .splide__arrow--next { right: -60px; }
+        }
+
+        @@media (max-width: 576px) {
+            .future-estates-slider-shell .splide__arrow { display: none !important; }
+        }
+
+        .future-estates-slider-shell .splide__pagination {
+            bottom: 12px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            padding: 0;
+        }
+
+        .future-estates-slider-shell .splide__pagination__page {
+            background: #c4c4c4;
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+        }
+
+        .future-estates-slider-shell .splide__pagination__page.is-active {
+            background: #595355;
+            transform: scale(1.1);
+        }
+
+        @@media (max-width: 767px) {
+            .future-estates-slider-shell {
+                overflow: hidden;
+            }
+        }
+    </style>
+}
