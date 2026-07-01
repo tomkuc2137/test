@@ -1,0 +1,226 @@
+@page "/regulamin-strony"
+@model DmWebsite.Pages.Regulamin
+@{
+    ViewData["Title"] = "Regulamin";
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage" />
+}
+
+<main class="bg-[#f3f3f5]">
+    <section class="bg-[#f3f3f5]" aria-labelledby="regulamin-heading">
+        <div class="max-w-[960px] mx-auto px-4 lg:px-8 py-10 lg:py-20 font-inter text-[16px] lg:text-[18px] leading-[1.7] text-[#595355]">
+            <h1 id="regulamin-heading" class="font-barlow font-semibold text-[#151515] text-[28px] lg:text-[42px] leading-[1.2] text-center m-0 mb-10 lg:mb-16">
+                Regulamin
+            </h1>
+
+            <div class="legal-content">
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-0 mb-4">
+                    §1. Postanowienia ogólne
+                </h2>
+                <ol>
+                    <li>Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem: <a href="https://formadevelopment.pl/" class="text-[#151515] underline hover:opacity-80">https://formadevelopment.pl/</a> (dalej: „Serwis”).</li>
+                    <li>
+                        Właścicielem i operatorem Serwisu jest:<br>
+                        <strong>FORMA DEVELOPMENT SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</strong><br>
+                        ul. Józefa Ignacego Kraszewskiego 30 / 23<br>
+                        15-025 Białystok, Polska<br>
+                        KRS: 0001201469<br>
+                        NIP: 9662212792<br>
+                        REGON: 543058708
+                    </li>
+                    <li>Kontakt z Operatorem możliwy jest pod adresem e-mail: <strong><a href="mailto:biuro@formadevelopment.pl" class="text-[#151515] underline hover:opacity-80">biuro@formadevelopment.pl</a></strong></li>
+                    <li>Regulamin określa prawa i obowiązki użytkowników Serwisu oraz Operatora.</li>
+                    <li>Korzystanie z Serwisu oznacza akceptację niniejszego Regulaminu.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §2. Zakres działalności Serwisu
+                </h2>
+                <ol>
+                    <li>Serwis ma charakter informacyjno-ofertowy i służy prezentacji działalności deweloperskiej Operatora.</li>
+                    <li>
+                        W szczególności Serwis umożliwia:
+                        <ul>
+                            <li>zapoznanie się z ofertą inwestycji deweloperskich,</li>
+                            <li>kontakt z Operatorem poprzez formularz kontaktowy,</li>
+                            <li>uzyskanie informacji o realizowanych projektach.</li>
+                        </ul>
+                    </li>
+                    <li>Informacje zawarte w Serwisie nie stanowią oferty w rozumieniu Kodeksu cywilnego, chyba że wyraźnie wskazano inaczej.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §3. Warunki korzystania z Serwisu
+                </h2>
+                <ol>
+                    <li>
+                        Użytkownik zobowiązuje się do korzystania z Serwisu zgodnie z:
+                        <ul>
+                            <li>obowiązującym prawem,</li>
+                            <li>zasadami współżycia społecznego,</li>
+                            <li>niniejszym Regulaminem.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Zabronione jest:
+                        <ul>
+                            <li>dostarczanie treści bezprawnych,</li>
+                            <li>podejmowanie działań mogących zakłócić działanie Serwisu,</li>
+                            <li>próby nieautoryzowanego dostępu do danych lub systemów.</li>
+                        </ul>
+                    </li>
+                    <li>Korzystanie z formularzy kontaktowych wymaga podania prawdziwych danych.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §4. Odpowiedzialność
+                </h2>
+                <ol>
+                    <li>Operator dokłada wszelkich starań, aby informacje zawarte w Serwisie były aktualne i rzetelne, jednak nie gwarantuje ich pełnej dokładności.</li>
+                    <li>
+                        Operator nie ponosi odpowiedzialności za:
+                        <ul>
+                            <li>przerwy w działaniu Serwisu wynikające z przyczyn technicznych,</li>
+                            <li>szkody wynikające z korzystania z Serwisu w sposób niezgodny z Regulaminem,</li>
+                            <li>działania osób trzecich.</li>
+                        </ul>
+                    </li>
+                    <li>Operator zastrzega sobie prawo do czasowego wyłączenia Serwisu w celu jego modernizacji lub konserwacji.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §5. Własność intelektualna
+                </h2>
+                <ol>
+                    <li>Wszystkie treści zamieszczone w Serwisie (teksty, grafiki, zdjęcia, projekty) stanowią własność Operatora lub podmiotów współpracujących.</li>
+                    <li>Zabronione jest kopiowanie, rozpowszechnianie lub wykorzystywanie treści bez uprzedniej zgody Operatora.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §6. Dane osobowe
+                </h2>
+                <ol>
+                    <li>
+                        Administratorem danych osobowych jest:<br>
+                        <strong>FORMA DEVELOPMENT SP. Z O.O.</strong> z siedzibą w Białymstoku.
+                    </li>
+                    <li>Dane osobowe przetwarzane są zgodnie z obowiązującymi przepisami oraz <a href="/polityka-prywatnosci/" class="text-[#151515] underline hover:opacity-80">Polityką Prywatności</a> dostępną w Serwisie.</li>
+                    <li>
+                        Dane przetwarzane są w szczególności w celu:
+                        <ul>
+                            <li>obsługi zapytań przez formularz kontaktowy,</li>
+                            <li>przedstawienia oferty,</li>
+                            <li>prowadzenia komunikacji z użytkownikiem.</li>
+                        </ul>
+                    </li>
+                    <li>Podanie danych jest dobrowolne, lecz niezbędne do realizacji powyższych celów.</li>
+                    <li>
+                        Użytkownikowi przysługuje prawo do:
+                        <ul>
+                            <li>dostępu do danych,</li>
+                            <li>ich sprostowania,</li>
+                            <li>usunięcia,</li>
+                            <li>ograniczenia przetwarzania,</li>
+                            <li>przenoszenia danych,</li>
+                            <li>wniesienia sprzeciwu.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §7. Pliki cookies
+                </h2>
+                <ol>
+                    <li>
+                        Serwis korzysta z plików cookies w celu:
+                        <ul>
+                            <li>zapewnienia prawidłowego działania strony,</li>
+                            <li>analizy ruchu (np. Google Analytics),</li>
+                            <li>działań marketingowych (np. Facebook Pixel).</li>
+                        </ul>
+                    </li>
+                    <li>Użytkownik może zarządzać plikami cookies poprzez ustawienia przeglądarki.</li>
+                    <li>Ograniczenie stosowania cookies może wpłynąć na funkcjonalność Serwisu.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §8. Usługi świadczone drogą elektroniczną
+                </h2>
+                <ol>
+                    <li>
+                        Operator świadczy usługi drogą elektroniczną w zakresie:
+                        <ul>
+                            <li>udostępniania treści informacyjnych,</li>
+                            <li>obsługi formularza kontaktowego.</li>
+                        </ul>
+                    </li>
+                    <li>Usługi te są bezpłatne.</li>
+                    <li>Użytkownik może w każdej chwili zaprzestać korzystania z Serwisu.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §9. Reklamacje
+                </h2>
+                <ol>
+                    <li>Reklamacje dotyczące funkcjonowania Serwisu należy zgłaszać drogą elektroniczną na adres:<br><strong><a href="mailto:biuro@formadevelopment.pl" class="text-[#151515] underline hover:opacity-80">biuro@formadevelopment.pl</a></strong></li>
+                    <li>Reklamacja powinna zawierać opis problemu oraz dane kontaktowe zgłaszającego.</li>
+                    <li>Operator rozpatrzy reklamację w terminie do 14 dni.</li>
+                </ol>
+
+                <h2 class="font-barlow font-semibold text-[#151515] text-[22px] lg:text-[28px] leading-[1.3] mt-10 mb-4">
+                    §10. Postanowienia końcowe
+                </h2>
+                <ol>
+                    <li>Regulamin podlega prawu polskiemu.</li>
+                    <li>W sprawach nieuregulowanych zastosowanie mają przepisy Kodeksu cywilnego oraz innych właściwych ustaw.</li>
+                    <li>Operator zastrzega sobie prawo do zmiany Regulaminu.</li>
+                    <li>Zmiany wchodzą w życie z chwilą ich opublikowania w Serwisie.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section Styles {
+    <style>
+        .legal-content ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .legal-content ol > li {
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ol > li:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-content ol ol {
+            list-style-type: lower-alpha;
+            margin-top: 0.75rem;
+        }
+
+        .legal-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin: 0.75rem 0 0;
+        }
+
+        .legal-content ul > li {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-content ul > li:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-content strong {
+            color: #151515;
+            font-weight: 600;
+        }
+    </style>
+}
