@@ -1,0 +1,121 @@
+@{
+    var contactEmail = "biuro@formadevelopment.pl";
+    var contactPhone = "881 269 000";
+    var contactPhoneHref = "tel:+48881269000";
+    var privacyPolicyUrl = "/polityka-prywatnosci/";
+}
+
+@* Kontakt / formularz *@
+<section class="bg-[#f3f3f5] border-t border-[#c2c0c9] rounded-b-[40px] overflow-hidden" aria-labelledby="contact-heading">
+    <div class="max-w-[1680px] mx-auto px-4 lg:px-[142px] py-8 lg:py-20">
+        <h2 id="contact-heading" class="font-barlow font-semibold text-[#151515] text-[28px] lg:text-[42px] leading-[1.2] text-left lg:text-center m-0">
+            Masz pytania dot. mieszkania lub potrzebujesz pomocy w wyborze?
+        </h2>
+        <p class="font-inter text-[20px] lg:text-[32px] leading-[1.4] text-[#151515] text-left lg:text-center m-0 mt-2">
+            Napisz do nas wiadomość lub zadzwoń. Chętnie pomożemy!
+        </p>
+
+        <div class="mt-6 lg:mt-16 bg-white rounded-[24px] overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-stretch">
+                <div class="flex flex-col items-center justify-center text-center p-4 pt-4 lg:p-10 lg:border-r lg:border-[#e4e0f2]">
+                    <div class="inline-flex items-center justify-center w-10 h-10 lg:w-20 lg:h-20 rounded-full bg-[#efeef3] text-[#ba9e60] shrink-0" aria-hidden="true">
+                        <svg class="w-5 h-5 lg:w-10 lg:h-10" viewBox="0 0 80 82" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.1899 38.6311C28.1894 47.5667 34.0655 53.9027 43.2358 58.6786C44.031 57.9633 44.4558 57.3741 45.1136 56.5214C47.7148 53.0963 50.9546 48.9846 56.2607 51.4628C59.7225 53.2145 66.5264 56.8966 69.4038 59.0299C70.4992 59.7996 71.2912 60.7704 71.8245 61.8738C72.9566 64.2226 72.8097 66.9164 72.0911 69.3547C71.7207 70.6097 71.181 71.8536 70.5407 72.9809C68.1375 77.2028 64.1472 79.4048 59.5437 80.6008C53.947 82.049 48.89 82.089 43.3268 80.374C39.1289 79.0758 35.228 76.9777 31.5027 74.6783L31.0221 74.3813C29.2145 73.2556 27.2729 72.0452 25.2849 70.5666L25.2705 70.5539C21.4398 67.6701 17.5836 64.122 14.0867 60.1525C10.8484 56.4767 7.8976 52.4145 5.54236 48.1559C3.38352 44.2518 1.72926 40.1513 0.807924 35.9997C-0.503028 30.0868 -0.405625 23.2797 2.5037 17.8252C5.90962 11.4413 12.0907 8.83213 19.0112 9.4421L19.182 9.46286C20.378 9.61296 21.4654 10.3427 22.0546 11.3966L29.9283 24.7057C30.6979 25.7468 31.145 26.8182 31.2951 27.9184C31.8684 32.145 28.4034 34.7446 25.4382 36.9178C24.4274 37.6523 23.2985 38.4715 23.1899 38.6311ZM19.091 40.7181C13.9733 53.8931 20.7979 61.4219 28.0409 66.8845C40.2898 74.7246 47.1415 77.9805 54.8971 76.8356C62.8155 75.0009 66.2661 72.858 67.6793 68.0581C63.2067 60.4718 58.0922 57.6264 54.2759 55.6064C31.2999 57.7653 24.6494 50.7012 19.091 40.7181Z"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="font-barlow font-semibold text-[#151515] text-[24px] lg:text-[32px] leading-[1.2] m-0 mt-4">
+                        Skontaktuj się<br>z naszym biurem
+                    </h3>
+
+                    <div class="w-full max-w-md mt-4 flex flex-col gap-4">
+                        <a href="mailto:@contactEmail"
+                           class="hidden lg:inline-flex items-center justify-center gap-3 w-full font-inter font-semibold text-[24px] leading-none text-[#151515] border border-[#e4e0f2] rounded-lg py-6 px-10 hover:bg-[#fafafa] transition-colors">
+                            <svg class="w-6 h-6 shrink-0 text-[#8f8f8f]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21ZM3 4.5C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5H3Z"/>
+                                <path d="M12.0001 13.4999C11.832 13.4999 11.6687 13.4434 11.5366 13.3394L1.0366 5.08944C0.957326 5.02923 0.890832 4.95384 0.840994 4.86767C0.791156 4.7815 0.758972 4.68626 0.746318 4.58752C0.733664 4.48878 0.740794 4.38851 0.767291 4.29256C0.793788 4.1966 0.839123 4.10688 0.900652 4.02862C0.962181 3.95037 1.03867 3.88514 1.12567 3.83676C1.21266 3.78837 1.30842 3.75778 1.40736 3.74678C1.5063 3.73578 1.60644 3.74459 1.70194 3.77269C1.79744 3.80079 1.88639 3.84761 1.9636 3.91044L12.0001 11.7959L22.0366 3.91044C22.1138 3.84761 22.2028 3.80079 22.2983 3.77269C22.3938 3.74459 22.4939 3.73578 22.5928 3.74678C22.6918 3.75778 22.7875 3.78837 22.8745 3.83676C22.9615 3.88514 23.038 3.95037 23.0996 4.02862C23.1611 4.10688 23.2064 4.1966 23.2329 4.29256C23.2594 4.38851 23.2665 4.48878 23.2539 4.58752C23.2412 4.68626 23.209 4.7815 23.1592 4.86767C23.1094 4.95384 23.0429 5.02923 22.9636 5.08944L12.4636 13.3394C12.3315 13.4434 12.1682 13.4999 12.0001 13.4999Z"/>
+                            </svg>
+                            @contactEmail
+                        </a>
+
+                        <a href="mailto:@contactEmail"
+                           class="inline-flex lg:hidden items-center justify-center gap-3 w-full font-inter font-semibold text-[15px] leading-none text-[#151515] border border-[#e4e0f2] rounded-lg py-5 px-4 hover:bg-[#fafafa] transition-colors">
+                            <svg class="w-6 h-6 shrink-0 text-[#8f8f8f]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M21 21H3C2.20435 21 1.44129 20.6839 0.87868 20.1213C0.316071 19.5587 0 18.7956 0 18V6C0 5.20435 0.316071 4.44129 0.87868 3.87868C1.44129 3.31607 2.20435 3 3 3H21C21.7956 3 22.5587 3.31607 23.1213 3.87868C23.6839 4.44129 24 5.20435 24 6V18C24 18.7956 23.6839 19.5587 23.1213 20.1213C22.5587 20.6839 21.7956 21 21 21ZM3 4.5C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5H3Z"/>
+                                <path d="M12.0001 13.4999C11.832 13.4999 11.6687 13.4434 11.5366 13.3394L1.0366 5.08944C0.957326 5.02923 0.890832 4.95384 0.840994 4.86767C0.791156 4.7815 0.758972 4.68626 0.746318 4.58752C0.733664 4.48878 0.740794 4.38851 0.767291 4.29256C0.793788 4.1966 0.839123 4.10688 0.900652 4.02862C0.962181 3.95037 1.03867 3.88514 1.12567 3.83676C1.21266 3.78837 1.30842 3.75778 1.40736 3.74678C1.5063 3.73578 1.60644 3.74459 1.70194 3.77269C1.79744 3.80079 1.88639 3.84761 1.9636 3.91044L12.0001 11.7959L22.0366 3.91044C22.1138 3.84761 22.2028 3.80079 22.2983 3.77269C22.3938 3.74459 22.4939 3.73578 22.5928 3.74678C22.6918 3.75778 22.7875 3.78837 22.8745 3.83676C22.9615 3.88514 23.038 3.95037 23.0996 4.02862C23.1611 4.10688 23.2064 4.1966 23.2329 4.29256C23.2594 4.38851 23.2665 4.48878 23.2539 4.58752C23.2412 4.68626 23.209 4.7815 23.1592 4.86767C23.1094 4.95384 23.0429 5.02923 22.9636 5.08944L12.4636 13.3394C12.3315 13.4434 12.1682 13.4999 12.0001 13.4999Z"/>
+                            </svg>
+                            @contactEmail
+                        </a>
+
+                        <a href="@contactPhoneHref"
+                           class="inline-flex items-center justify-center gap-3 w-full font-inter font-semibold text-[16px] lg:text-[24px] leading-none text-[#151515] border border-[#e4e0f2] rounded-lg py-5 px-4 lg:py-6 lg:px-10 hover:bg-[#fafafa] transition-colors">
+                            <svg class="w-6 h-6 shrink-0 text-[#8f8f8f]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M5.459 0.521C6.555 0.461 7.735 0.819 8.377 1.605L10.515 3.191C11.62 4.091 11.612 5.847 10.843 7.018L9.116 8.111C9.09 8.139 9.04 8.333 9.265 9.333C10.069 11.225 11 12.238 12 13.097C13.069 13.988 14.274 14.704 15.567 15.218C15.646 15.244 15.731 15.246 15.81 15.22C15.889 15.194 15.958 15.142 16.005 15.073L17.27 13.256C17.446 12.987 17.697 12.775 17.991 12.647C18.287 12.517 18.615 12.477 18.934 12.531C20.021 12.714 21.038 13.189 21.877 13.904C22.611 14.531 23.184 15.321 23.552 16.209C22.589 18.047 21.229 20.752 17.631 22.698C17.461 22.751 17.284 22.776 17.106 22.774C13.29 21.626 10.237 19.873 7.641 17.555C4.077 14.194 1.81 10.578 0.535 6.574C0.424 6.241 0.424 5.88 0.534 5.547C1.136 3.587 2.485 1.942 4.288 0.967L4.847 2.137C3.364 2.953 2.261 4.318 1.773 5.938C2.985 9.958 5.134 13.388 8.024 16.133C10.584 18.538 13.651 20.34 16.997 21.407C18.787 20.953 20.118 19.927 20.958 18.54C21.132 16.186 19.307 14.304 17.633 13.781C17.564 13.77 17.493 13.78 17.429 13.809C17.364 13.838 17.309 13.885 17.271 13.944L16.056 15.762C15.847 16.081 15.535 16.319 15.172 16.436C14.809 16.552 14.416 16.54 14.061 16.402C11.063 15.203 8.56 13.026 6.959 10.225C6.759 9.856 6.701 9.429 6.796 9.022C6.891 8.616 7.133 8.26 7.476 8.021L9.115 6.974C9.184 6.929 9.237 6.863 9.264 6.785C9.291 6.708 9.292 6.623 9.266 6.545L9.263 6.537C9.014 5.612 8.618 4.733 8.091 3.934C7.375 2.976 6.781 2.379 6.115 1.87C6.049 1.816 5.969 1.789 5.888 1.79H5.806C5.475 1.872 5.153 1.988 4.847 2.137L5.805 1.79Z"/>
+                            </svg>
+                            @contactPhone
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-4 lg:p-10 border-t border-[#c2c0c9] lg:border-t-0">
+                    <form class="customize-space-contact-form space-y-6" method="post" novalidate>
+                        <div>
+                            <label for="contact-name" class="block font-inter text-[#151515] mb-3">
+                                Podaj imię <span class="text-[#151515]">*</span>
+                            </label>
+                            <input type="text"
+                                   id="contact-name"
+                                   name="Name"
+                                   required
+                                   autocomplete="name"
+                                   placeholder="np. Kamil"
+                                   class="w-full font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                        </div>
+
+                        <div>
+                            <label for="contact-email" class="block font-inter text-[#151515] mb-3">
+                                Podaj e-mail <span class="text-[#151515]">*</span>
+                            </label>
+                            <input type="email"
+                                   id="contact-email"
+                                   name="Email"
+                                   required
+                                   autocomplete="email"
+                                   placeholder="np. Kamil@gmail.com..."
+                                   class="w-full font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block font-inter text-[#151515] mb-3">
+                                Wiadomość <span class="text-[#151515]">*</span>
+                            </label>
+                            <textarea id="contact-message"
+                                      name="Message"
+                                      required
+                                      rows="6"
+                                      placeholder="Treść pytania lub wiadomości..."
+                                      class="w-full min-h-[140px] font-inter text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515] resize-y"></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox"
+                                   id="contact-consent"
+                                   name="Consent"
+                                   required
+                                   value="true"
+                                   class="customize-space-contact-form__checkbox mt-1 shrink-0" />
+                            <label for="contact-consent" class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#595355] m-0">
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="@privacyPolicyUrl" class="text-[#151515] underline hover:opacity-80">Polityką Prywatności</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                                class="inline-flex items-center justify-center font-inter text-[16px] text-[#efeef3] bg-[#151515] rounded-lg py-5 px-12 hover:opacity-90 transition-opacity">
+                            Wyślij wiadomość
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
