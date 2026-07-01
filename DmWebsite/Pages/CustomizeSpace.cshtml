@@ -36,6 +36,22 @@
             Text = "Korzystając z naszych usług, nie musisz szukać nowych podwykonawców i martwić się o odpowiedzialność wykonanej pracy. Z nami masz wszystko w jednym miejscu."
         }
     };
+
+    var turnKeyApartmentTypesCol1 = new[]
+    {
+        new { Label = "Kawalerki", Sublabel = "" },
+        new { Label = "Mieszkania", Sublabel = "3-pokojowe" },
+        new { Label = "Mieszkania", Sublabel = "dwupoziomowe" }
+    };
+
+    var turnKeyApartmentTypesCol2 = new[]
+    {
+        new { Label = "Mieszkania", Sublabel = "2-pokojowe" },
+        new { Label = "Mieszkania", Sublabel = "4-pokojowe" },
+        new { Label = "Domy", Sublabel = "wolnostojące" }
+    };
+
+    var turnKeyTypesBg = Url.Content("~/inc/img/Big-Image-Section.png");
 }
 
 @section Header {
@@ -197,6 +213,50 @@
                         </p>
                     </article>
                 }
+            </div>
+        </div>
+    </section>
+
+    @* Jakie typy mieszkań przygotowujemy pod klucz? *@
+    <section class="relative bg-cover bg-center bg-no-repeat py-12 lg:py-0 lg:min-h-[640px] flex items-center"
+             style="background-image: url('@turnKeyTypesBg');"
+             aria-labelledby="turn-key-types-heading">
+        <div class="relative z-[1] w-full max-w-[1390px] mx-auto px-4 lg:px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center">
+                <div class="flex items-center lg:min-h-[640px]">
+                    <h2 id="turn-key-types-heading" class="font-barlow font-semibold text-white text-[28px] md:text-[36px] lg:text-[44px] leading-[1.2] m-0">
+                        Jakie typy mieszkań przygotowujemy pod klucz?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 lg:gap-x-8 gap-y-6 lg:gap-y-12 lg:min-h-[640px] lg:py-16">
+                    @foreach (var typesColumn in new[] { turnKeyApartmentTypesCol1, turnKeyApartmentTypesCol2 })
+                    {
+                        <div class="flex flex-col justify-between gap-6 lg:gap-12">
+                            @foreach (var item in typesColumn)
+                            {
+                                <div class="flex items-start gap-3 lg:gap-4">
+                                    <span class="inline-flex shrink-0 w-8 h-8 lg:w-12 lg:h-12 text-[#ba9e60] mt-1 lg:mt-0" aria-hidden="true">
+                                        <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                        </svg>
+                                    </span>
+                                    <p class="font-barlow font-semibold text-[#efeef3] text-[28px] lg:text-[36px] leading-[1.2] m-0">
+                                        @if (string.IsNullOrEmpty(item.Sublabel))
+                                        {
+                                            @item.Label
+                                        }
+                                        else
+                                        {
+                                            @item.Label<br>@item.Sublabel
+                                        }
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </section>
