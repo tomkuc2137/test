@@ -1,0 +1,536 @@
+@page "/dopasuj-przestrzen-pod-siebie"
+@model DmWebsite.Pages.CustomizeSpaceModel
+@{
+    ViewData["Title"] = "Dopasuj przestrzeń pod siebie";
+    var heroImage = Url.Content("~/inc/img/Depositphotos_223168402_L.jpg");
+    var applicationPdf = Url.Content("~/inc/docs/WNIOSEK-O-WPROWADZENIE-ZMIAN-LOKATORSKICH-.pdf");
+
+    var turnKeyBenefits = new[]
+    {
+        new
+        {
+            Icon = "Icon.png",
+            Title = "Oszczędność czasu",
+            Lead = "Dzięki takiej usłudze zaoszczędzisz czas i unikniesz stresu związanego z samodzielnym wykończeniem.",
+            Text = "Profesjonalne wykończenie zapewnia, że mieszkanie będzie gotowe do zamieszkania od razu, a także pozwala na dostosowanie wnętrza do własnych potrzeb i gustu."
+        },
+        new
+        {
+            Icon = "Icon-1.png",
+            Title = "Oszczędność pieniędzy",
+            Lead = "Współpracując z nami, zapłacisz mniej niż zatrudniając osobną firmę, ponieważ mamy bezkonkurencyjne ceny na materiał czy podwykonawców.",
+            Text = "Zaoszczędzone pieniądze możesz zainwestować np. w lepszej jakości materiały niż standardowe lub np. wymarzone łóżko."
+        },
+        new
+        {
+            Icon = "Icon-2.png",
+            Title = "Pewny komfort",
+            Lead = "Usługa wykończenia mieszkania pod klucz to idealne rozwiązanie dla osób, które chcą uniknąć skomplikowanych procesów związanych z aranżacją wnętrz.",
+            Text = "Dzięki niej możesz cieszyć się nowym mieszkaniem bez zbędnych zmartwień, a także mieć pewność, że wszystko zostało wykonane zgodnie z najwyższymi standardami."
+        },
+        new
+        {
+            Icon = "Icon-3.png",
+            Title = "Uproszczenie procesu",
+            Lead = "Usługa wykończenia mieszkania jest idealna dla osób, które nie lubią szukać nowych wykonawców i chcą skrócić ilość powiązań.",
+            Text = "Korzystając z naszych usług, nie musisz szukać nowych podwykonawców i martwić się o odpowiedzialność wykonanej pracy. Z nami masz wszystko w jednym miejscu."
+        }
+    };
+
+    var turnKeyApartmentTypesCol1 = new[]
+    {
+        new { Label = "Kawalerki", Sublabel = "" },
+        new { Label = "Mieszkania", Sublabel = "3-pokojowe" },
+        new { Label = "Mieszkania", Sublabel = "dwupoziomowe" }
+    };
+
+    var turnKeyApartmentTypesCol2 = new[]
+    {
+        new { Label = "Mieszkania", Sublabel = "2-pokojowe" },
+        new { Label = "Mieszkania", Sublabel = "4-pokojowe" },
+        new { Label = "Domy", Sublabel = "wolnostojące" }
+    };
+
+    var turnKeyTypesBg = Url.Content("~/inc/img/Big-Image-Section.png");
+
+    var cooperationStages = new[]
+    {
+        new
+        {
+            NumberBg = "1-2.png",
+            Icon = "Frame-2.png",
+            Title = "Konsultacia i ustalenie potrzeb oraz zakresu pracy",
+            TitleLine2 = "",
+            Text = "Każda udana realizacja zaczyna się od rozmowy. Na tym etapie skupiamy się przede wszystkim na poznaniu Twoich oczekiwań, stylu życia oraz wizji przestrzeni, którą chcesz stworzyć. Analizujemy potrzeby funkcjonalne, estetyczne oraz budżetowe, aby jak najlepiej dopasować zakres prac do Twoich możliwości i planów. To moment, w którym możesz swobodnie opowiedzieć o swoich inspiracjach, pomysłach i priorytetach. My z kolei doradzamy, podpowiadamy rozwiązania i wskazujemy najlepsze kierunki działania. Dzięki temu już na początku budujemy jasny plan współpracy, który pozwala uniknąć niepotrzebnych niespodzianek na kolejnych etapach realizacji."
+        },
+        new
+        {
+            NumberBg = "2-1.png",
+            Icon = "Image-19.png",
+            Title = "Prace projektowe",
+            TitleLine2 = "i wybór materiałów",
+            Text = "Po ustaleniu wszystkich założeń przechodzimy do etapu projektowego, gdzie pomysły zaczynają przybierać realny kształt. Przygotowujemy koncepcję przestrzeni, dopracowujemy detale oraz dobieramy materiały, które nie tylko będą świetnie wyglądać, ale również sprawdzą się w codziennym użytkowaniu. To moment, w którym wspólnie wybieramy kolory, faktury, elementy wykończenia i rozwiązania techniczne. Dbamy o to, aby całość była spójna, funkcjonalna i ponadczasowa. Naszym celem jest stworzenie projektu, który będzie nie tylko estetyczny, ale przede wszystkim dopasowany do Twoich potrzeb i stylu życia."
+        },
+        new
+        {
+            NumberBg = "3-1.png",
+            Icon = "Image-20.png",
+            Title = "Prace wykończeniowe",
+            TitleLine2 = "i odbiór kluczy",
+            Text = "Gdy projekt jest dopracowany w każdym detalu, rozpoczyna się etap realizacji. To właśnie wtedy wizja zmienia się w rzeczywistość. Koordynujemy wszystkie prace wykończeniowe, dbamy o jakość wykonania oraz pilnujemy, aby każdy element został zrealizowany zgodnie z projektem. Na bieżąco monitorujemy postęp prac i rozwiązujemy ewentualne wyzwania, tak aby cały proces przebiegał sprawnie i bez stresu dla Ciebie. Finałem jest moment odbioru – chwila, w której możesz zobaczyć gotową przestrzeń i odebrać klucze do miejsca, które zostało stworzone dokładnie z myślą o Tobie."
+        }
+    };
+
+    var vimeoBackgroundVideoUrl = "https://player.vimeo.com/video/1174678417?background=1&autoplay=1&muted=1&loop=1";
+    var partnerImage = Url.Content("~/inc/img/Image-10.png");
+    var partnerIcon = Url.Content("~/inc/img/Icon-Box-2.png");
+
+    var faqItems = new[]
+    {
+        new
+        {
+            Question = "Ile trwa typowe wykończenie pod klucz?",
+            Answer = "Czas realizacji wykończenia „pod klucz” zależy przede wszystkim od wielkości nieruchomości, zakresu prac oraz stopnia skomplikowania projektu. W przypadku standardowego mieszkania proces ten najczęściej trwa od kilku do kilkunastu tygodni. Na początku przygotowywany jest szczegółowy harmonogram prac, dzięki czemu każdy etap realizacji jest dobrze zaplanowany i przebiega w odpowiedniej kolejności. Dbamy o sprawną koordynację wszystkich działań, aby cały proces przebiegał możliwie szybko, ale przede wszystkim solidnie i bez kompromisów w kwestii jakości wykonania."
+        },
+        new
+        {
+            Question = "Jakie są pakiety wykończenia? Ile to kosztuje?",
+            Answer = "Oferujemy różne warianty wykończenia, które można dopasować do indywidualnych potrzeb, stylu oraz budżetu. Pakiety mogą obejmować zarówno podstawowe rozwiązania, idealne dla osób szukających funkcjonalnego i estetycznego wykończenia, jak i bardziej rozbudowane opcje z materiałami premium oraz dodatkowymi elementami aranżacyjnymi. Każdy projekt jest jednak traktowany indywidualnie – dlatego po wstępnej konsultacji przygotowujemy szczegółową ofertę wraz z wyceną. Dzięki temu dokładnie wiesz, co wchodzi w zakres prac i jakie będą koszty realizacji."
+        },
+        new
+        {
+            Question = "Skąd mam pewność, że wszystko zostanie zrobione z najwyższą jakością?",
+            Answer = "Najważniejszym elementem naszej pracy jest jakość wykonania oraz dbałość o detale. Współpracujemy ze sprawdzonymi fachowcami oraz korzystamy z materiałów renomowanych producentów. Każdy etap realizacji jest nadzorowany i kontrolowany, aby mieć pewność, że prace są wykonywane zgodnie z projektem i najwyższymi standardami. Stawiamy również na transparentność – na bieżąco informujemy o postępach prac, a w razie potrzeby konsultujemy wszelkie decyzje. Dzięki temu nasi klienci mają pełną kontrolę nad realizacją i poczucie bezpieczeństwa na każdym etapie współpracy."
+        },
+        new
+        {
+            Question = "Czy po etapie wykonawczym przysługują mi poprawki?",
+            Answer = "Tak – po zakończeniu wszystkich prac następuje etap odbioru, podczas którego wspólnie sprawdzamy wykonanie całej realizacji. Jeśli pojawią się jakiekolwiek elementy wymagające korekty lub dopracowania, zostają one odnotowane i poprawione. Zależy nam na tym, aby finalny efekt był w pełni zgodny z ustaleniami oraz spełniał Twoje oczekiwania. Naszym celem jest oddanie przestrzeni, która jest nie tylko estetyczna i funkcjonalna, ale także dopracowana w każdym szczególe."
+        }
+    };
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage" />
+}
+
+<main class="bg-[#f3f3f5]">
+    <section class="relative bg-[#f3f3f5] overflow-visible" aria-labelledby="customize-space-heading">
+        <div class="flex flex-col lg:block">
+            <div class="relative lg:absolute lg:top-0 lg:right-0 lg:left-auto w-full lg:w-[48vw] xl:w-[52vw] min-h-[167px] lg:min-h-[460px] xl:min-h-[500px] rounded-l-[40px] overflow-hidden bg-cover bg-center z-[2] lg:-mb-[40px] order-1 lg:order-none"
+                 style="background-image: url('@heroImage');"
+                 aria-hidden="true">
+            </div>
+
+            <div class="relative z-[3] order-2 lg:order-none">
+                <div class="max-w-[1680px] mx-auto px-4 lg:px-0">
+                    <div class="flex flex-col lg:flex-row lg:min-h-[460px] xl:min-h-[500px]">
+                        <div class="flex flex-col justify-center items-center lg:w-[42%] xl:w-[40%] py-8 lg:py-16 lg:pl-4 xl:pl-[130px] lg:pr-6">
+                            <h1 id="customize-space-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] text-center w-full">
+                                Dopasuj przestrzeń pod siebie
+                            </h1>
+
+                            @* Desktop / tablet: przyciski w linii *@
+                            <div class="hidden lg:flex flex-wrap gap-3 mt-8 justify-center w-full">
+                                <a href="#zmiany-lokatorskie"
+                                   class="inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Zmiany lokatorskie
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="hidden xl:inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Wykończenie wnętrza pod klucz
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="inline-flex xl:hidden items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Wykończenie wnętrza
+                                </a>
+                            </div>
+
+                            @* Mobile: przyciski pełnej szerokości *@
+                            <div class="flex lg:hidden flex-col gap-2 mt-6 w-full">
+                                <a href="#zmiany-lokatorskie"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Zmiany lokatorskie
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Wykończenie pod klucz
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hidden lg:block lg:flex-1 shrink-0 pointer-events-none" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Zmiany lokatorskie *@
+    <section id="zmiany-lokatorskie" class="scroll-mt-24 bg-[#f3f3f5]" aria-labelledby="tenant-changes-heading">
+        <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px]">
+            <div class="py-8 lg:py-12">
+                <h2 id="tenant-changes-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[42px] xl:text-[55px] leading-[1.15] flex items-center gap-4">
+                    <span class="inline-flex shrink-0 w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full bg-[#ba9e60] text-white" aria-hidden="true">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0206 32.0008C15.3885 32.0006 14.7707 31.8131 14.2453 31.4619C13.7198 31.1107 13.3102 30.6116 13.0684 30.0277C12.8265 29.4437 12.7632 28.8012 12.8865 28.1813C13.0098 27.5614 13.3141 26.9919 13.7609 26.545L24.2858 16.02L13.7609 5.4951C13.4556 5.20027 13.2121 4.84759 13.0446 4.45765C12.8771 4.0677 12.789 3.64831 12.7853 3.22392C12.7816 2.79954 12.8625 2.37867 13.0232 1.98588C13.1839 1.59308 13.4212 1.23623 13.7213 0.93613C14.0214 0.636035 14.3782 0.398711 14.771 0.238006C15.1638 0.0773003 15.5847 -0.00356709 16.0091 0.000120677C16.4335 0.00380845 16.8529 0.0919784 17.2428 0.259485C17.6327 0.426993 17.9854 0.670483 18.2803 0.975748L31.0649 13.7604C31.6641 14.3597 32.0007 15.1725 32.0007 16.02C32.0007 16.8675 31.6641 17.6803 31.0649 18.2797L18.2803 31.0643C17.681 31.6638 16.8682 32.0006 16.0206 32.0008Z"/>
+                            <path d="M3.23543 32.0008C2.60339 32.0006 1.98558 31.8131 1.4601 31.4619C0.934618 31.1107 0.525065 30.6116 0.283212 30.0277C0.0413589 29.4437 -0.0219353 28.8012 0.101332 28.1813C0.2246 27.5614 0.528896 26.9919 0.975748 26.545L11.5007 16.02L0.975748 5.4951C0.670483 5.20027 0.426993 4.84759 0.259485 4.45765C0.0919784 4.0677 0.00380845 3.64831 0.000120677 3.22392C-0.00356709 2.79954 0.0773003 2.37867 0.238006 1.98588C0.398711 1.59308 0.636035 1.23623 0.93613 0.93613C1.23623 0.636035 1.59308 0.398711 1.98588 0.238006C2.37867 0.0773003 2.79954 -0.00356709 3.22392 0.000120677C3.64831 0.00380845 4.0677 0.0919784 4.45765 0.259485C4.84759 0.426993 5.20027 0.670483 5.4951 0.975748L18.2797 13.7604C18.8789 14.3597 19.2155 15.1725 19.2155 16.02C19.2155 16.8675 18.8789 17.6803 18.2797 18.2797L5.4951 31.0643C4.89585 31.6638 4.08303 32.0006 3.23543 32.0008Z"/>
+                        </svg>
+                    </span>
+                    <span>Zmiany lokatorskie na etapie budowy</span>
+                </h2>
+            </div>
+
+            @* Desktop / tablet *@
+            <div class="hidden sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-12 pb-8 lg:pb-12">
+                <div class="flex items-start">
+                    <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] m-0">
+                        Oto 5 kroków do wprowadzenia zmian lokatorskich
+                    </h3>
+                </div>
+
+                <div class="min-w-0">
+                    <p class="font-inter text-[16px] text-[#595355] m-0">[smartslider3 slider="6"]</p>
+                </div>
+            </div>
+
+            @* Mobile *@
+            <div class="sm:hidden pb-8">
+                <h3 class="font-barlow font-semibold text-[#151515] text-[24px] leading-[1.2] mb-6">
+                    Oto 5 kroków do wprowadzenia zmian lokatorskich
+                </h3>
+
+                <p class="font-inter text-[16px] text-[#595355] m-0">[smartslider3 slider="8"]</p>
+            </div>
+
+            <div class="pb-10 lg:pb-16">
+                <a href="@applicationPdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-8 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                    Pobierz wniosek
+                </a>
+            </div>
+        </div>
+    </section>
+
+    @* Mieszkanie pod klucz *@
+    <section id="mieszkanie-pod-klucz" class="scroll-mt-24 bg-[#f3f3f5]" aria-labelledby="turn-key-heading-mobile">
+        @* Nagłówek mobile *@
+        <div class="lg:hidden max-w-[1680px] mx-auto px-4 py-8">
+            <h2 id="turn-key-heading-mobile" class="font-barlow font-semibold text-[#151515] text-[28px] leading-[1.15] flex items-center gap-4">
+                <span class="inline-flex shrink-0 w-12 h-12 items-center justify-center rounded-full bg-[#ba9e60] text-white" aria-hidden="true">
+                    <svg class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.0206 32.0008C15.3885 32.0006 14.7707 31.8131 14.2453 31.4619C13.7198 31.1107 13.3102 30.6116 13.0684 30.0277C12.8265 29.4437 12.7632 28.8012 12.8865 28.1813C13.0098 27.5614 13.3141 26.9919 13.7609 26.545L24.2858 16.02L13.7609 5.4951C13.4556 5.20027 13.2121 4.84759 13.0446 4.45765C12.8771 4.0677 12.789 3.64831 12.7853 3.22392C12.7816 2.79954 12.8625 2.37867 13.0232 1.98588C13.1839 1.59308 13.4212 1.23623 13.7213 0.93613C14.0214 0.636035 14.3782 0.398711 14.771 0.238006C15.1638 0.0773003 15.5847 -0.00356709 16.0091 0.000120677C16.4335 0.00380845 16.8529 0.0919784 17.2428 0.259485C17.6327 0.426993 17.9854 0.670483 18.2803 0.975748L31.0649 13.7604C31.6641 14.3597 32.0007 15.1725 32.0007 16.02C32.0007 16.8675 31.6641 17.6803 31.0649 18.2797L18.2803 31.0643C17.681 31.6638 16.8682 32.0006 16.0206 32.0008Z"/>
+                        <path d="M3.23543 32.0008C2.60339 32.0006 1.98558 31.8131 1.4601 31.4619C0.934618 31.1107 0.525065 30.6116 0.283212 30.0277C0.0413589 29.4437 -0.0219353 28.8012 0.101332 28.1813C0.2246 27.5614 0.528896 26.9919 0.975748 26.545L11.5007 16.02L0.975748 5.4951C0.670483 5.20027 0.426993 4.84759 0.259485 4.45765C0.0919784 4.0677 0.00380845 3.64831 0.000120677 3.22392C-0.00356709 2.79954 0.0773003 2.37867 0.238006 1.98588C0.398711 1.59308 0.636035 1.23623 0.93613 0.93613C1.23623 0.636035 1.59308 0.398711 1.98588 0.238006C2.37867 0.0773003 2.79954 -0.00356709 3.22392 0.000120677C3.64831 0.00380845 4.0677 0.0919784 4.45765 0.259485C4.84759 0.426993 5.20027 0.670483 5.4951 0.975748L18.2797 13.7604C18.8789 14.3597 19.2155 15.1725 19.2155 16.02C19.2155 16.8675 18.8789 17.6803 18.2797 18.2797L5.4951 31.0643C4.89585 31.6638 4.08303 32.0006 3.23543 32.0008Z"/>
+                    </svg>
+                </span>
+                <span>Mieszkanie pod klucz</span>
+            </h2>
+        </div>
+
+        @* Nagłówek desktop *@
+        <div class="hidden lg:block max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px] py-8 lg:py-12">
+            <h2 id="turn-key-heading-desktop" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[42px] xl:text-[55px] leading-[1.15] flex items-center gap-4">
+                <span class="inline-flex shrink-0 w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full bg-[#ba9e60] text-white" aria-hidden="true">
+                    <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.0206 32.0008C15.3885 32.0006 14.7707 31.8131 14.2453 31.4619C13.7198 31.1107 13.3102 30.6116 13.0684 30.0277C12.8265 29.4437 12.7632 28.8012 12.8865 28.1813C13.0098 27.5614 13.3141 26.9919 13.7609 26.545L24.2858 16.02L13.7609 5.4951C13.4556 5.20027 13.2121 4.84759 13.0446 4.45765C12.8771 4.0677 12.789 3.64831 12.7853 3.22392C12.7816 2.79954 12.8625 2.37867 13.0232 1.98588C13.1839 1.59308 13.4212 1.23623 13.7213 0.93613C14.0214 0.636035 14.3782 0.398711 14.771 0.238006C15.1638 0.0773003 15.5847 -0.00356709 16.0091 0.000120677C16.4335 0.00380845 16.8529 0.0919784 17.2428 0.259485C17.6327 0.426993 17.9854 0.670483 18.2803 0.975748L31.0649 13.7604C31.6641 14.3597 32.0007 15.1725 32.0007 16.02C32.0007 16.8675 31.6641 17.6803 31.0649 18.2797L18.2803 31.0643C17.681 31.6638 16.8682 32.0006 16.0206 32.0008Z"/>
+                        <path d="M3.23543 32.0008C2.60339 32.0006 1.98558 31.8131 1.4601 31.4619C0.934618 31.1107 0.525065 30.6116 0.283212 30.0277C0.0413589 29.4437 -0.0219353 28.8012 0.101332 28.1813C0.2246 27.5614 0.528896 26.9919 0.975748 26.545L11.5007 16.02L0.975748 5.4951C0.670483 5.20027 0.426993 4.84759 0.259485 4.45765C0.0919784 4.0677 0.00380845 3.64831 0.000120677 3.22392C-0.00356709 2.79954 0.0773003 2.37867 0.238006 1.98588C0.398711 1.59308 0.636035 1.23623 0.93613 0.93613C1.23623 0.636035 1.59308 0.398711 1.98588 0.238006C2.37867 0.0773003 2.79954 -0.00356709 3.22392 0.000120677C3.64831 0.00380845 4.0677 0.0919784 4.45765 0.259485C4.84759 0.426993 5.20027 0.670483 5.4951 0.975748L18.2797 13.7604C18.8789 14.3597 19.2155 15.1725 19.2155 16.02C19.2155 16.8675 18.8789 17.6803 18.2797 18.2797L5.4951 31.0643C4.89585 31.6638 4.08303 32.0006 3.23543 32.0008Z"/>
+                    </svg>
+                </span>
+                <span>Mieszkanie pod klucz</span>
+            </h2>
+        </div>
+
+        <div class="max-w-[1680px] mx-auto px-4 sm:px-5 lg:px-6 xl:px-8 pb-10 lg:pb-16">
+            <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] mb-8 lg:mb-12 text-center">
+                Mieszkanie pod klucz – jakie są plusy?
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6 xl:gap-7">
+                @foreach (var benefit in turnKeyBenefits)
+                {
+                    var iconUrl = Url.Content($"~/inc/img/{benefit.Icon}");
+                    <article class="flex flex-col h-full min-h-[240px] lg:min-h-[280px] bg-white rounded-[24px] p-6 lg:p-8 xl:p-9">
+                        <img src="@iconUrl"
+                             alt=""
+                             width="88"
+                             height="88"
+                             class="w-[88px] h-[88px] lg:w-[100px] lg:h-[100px] object-contain"
+                             loading="lazy" />
+                        <h4 class="font-barlow font-semibold text-[20px] lg:text-[24px] leading-[1.3] text-[#151515] mt-6 lg:mt-7 mb-4 m-0">
+                            @benefit.Title
+                        </h4>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#151515] m-0 mb-3">
+                            @benefit.Lead
+                        </p>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#595355] m-0 mt-auto">
+                            @benefit.Text
+                        </p>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+
+    @* Jakie typy mieszkań przygotowujemy pod klucz? *@
+    <section class="relative bg-cover bg-center bg-no-repeat py-12 lg:py-0 lg:min-h-[640px] flex items-center"
+             style="background-image: url('@turnKeyTypesBg');"
+             aria-labelledby="turn-key-types-heading">
+        <div class="relative z-[1] w-full max-w-[1390px] mx-auto px-4 lg:px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 items-center">
+                <div class="flex items-center lg:min-h-[640px]">
+                    <h2 id="turn-key-types-heading" class="font-barlow font-semibold text-white text-[28px] md:text-[36px] lg:text-[44px] leading-[1.2] m-0">
+                        Jakie typy mieszkań przygotowujemy pod klucz?
+                    </h2>
+                </div>
+
+                <div class="flex items-center justify-center lg:min-h-[640px] lg:py-10">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-5 lg:gap-y-7 w-full max-w-[640px] lg:max-w-none">
+                    @foreach (var typesColumn in new[] { turnKeyApartmentTypesCol1, turnKeyApartmentTypesCol2 })
+                    {
+                        <div class="flex flex-col gap-5 lg:gap-7">
+                            @foreach (var item in typesColumn)
+                            {
+                                <div class="flex items-start gap-3 lg:gap-4">
+                                    <span class="inline-flex shrink-0 w-8 h-8 lg:w-12 lg:h-12 text-[#ba9e60] mt-1 lg:mt-0" aria-hidden="true">
+                                        <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                        </svg>
+                                    </span>
+                                    <p class="font-barlow font-semibold text-[#efeef3] text-[28px] lg:text-[36px] leading-[1.2] m-0">
+                                        @if (string.IsNullOrEmpty(item.Sublabel))
+                                        {
+                                            @item.Label
+                                        }
+                                        else
+                                        {
+                                            @item.Label<br>@item.Sublabel
+                                        }
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Etapy współpracy *@
+    <section class="bg-[#f3f3f5]" aria-labelledby="cooperation-stages-heading">
+        <div class="max-w-[1400px] mx-auto px-4 py-8 lg:py-20">
+            <h2 id="cooperation-stages-heading" class="font-barlow font-semibold text-[#151515] text-[28px] lg:text-[36px] leading-[1.2] text-center m-0 mb-6 lg:mb-16">
+                Etapy współpracy
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
+                @foreach (var stage in cooperationStages)
+                {
+                    var numberBgUrl = Url.Content($"~/inc/img/{stage.NumberBg}");
+                    var iconUrl = Url.Content($"~/inc/img/{stage.Icon}");
+                    <article class="relative flex flex-col items-center text-center gap-4 lg:gap-6 bg-no-repeat bg-auto bg-[position:15px_35%] px-2 pb-2"
+                             style="background-image: url('@numberBgUrl');">
+                        <img src="@iconUrl"
+                             alt=""
+                             width="120"
+                             height="120"
+                             class="w-20 h-20 lg:w-[120px] lg:h-[120px] object-contain"
+                             loading="lazy" />
+                        <h3 class="font-barlow font-bold text-[#151515] text-[20px] lg:text-[24px] leading-[1.2] m-0">
+                            @if (string.IsNullOrEmpty(stage.TitleLine2))
+                            {
+                                @stage.Title
+                            }
+                            else
+                            {
+                                @stage.Title<br>@stage.TitleLine2
+                            }
+                        </h3>
+                        <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#787878] m-0">
+                            @stage.Text
+                        </p>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+
+    @* Film Vimeo w tle *@
+    <section class="relative w-full h-[300px] md:h-[500px] overflow-hidden" aria-hidden="true">
+        <iframe src="@vimeoBackgroundVideoUrl"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-[100vh] border-0 pointer-events-none"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="video"></iframe>
+    </section>
+
+    @* Partner NA.GOTOWO — desktop *@
+    <section class="hidden lg:block bg-[#f3f3f5] border-b border-[#c2c0c9]" aria-labelledby="partner-heading-desktop">
+        <div class="max-w-[1680px] mx-auto px-4 pt-[60px] pb-[100px]">
+            <div class="grid grid-cols-2 gap-8 xl:gap-12 items-center">
+                <figure class="m-0">
+                    <img src="@partnerImage"
+                         alt=""
+                         width="828"
+                         height="621"
+                         class="w-full h-auto"
+                         loading="lazy" />
+                </figure>
+
+                <div class="flex flex-col gap-6">
+                    <h2 id="partner-heading-desktop" class="font-barlow font-semibold text-[#151515] text-[36px] xl:text-[44px] leading-[1.2] m-0 max-w-[680px]">
+                        Poznaj naszego partnera remontowego firmę NA.GOTOWO
+                    </h2>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#151515] m-0 max-w-[610px]">
+                        Realizacja idealnego wnętrza to nie tylko dobry projekt, ale także sprawdzona ekipa, która potrafi zamienić wizję w rzeczywistość. Dlatego współpracujemy z naszym zaufanym partnerem – Na Gotowo, firmą specjalizującą się w kompleksowych pracach wykończeniowych. Dzięki wieloletniemu doświadczeniu, precyzji wykonania oraz dbałości o każdy detal, realizacje przebiegają sprawnie, profesjonalnie i zgodnie z najwyższymi standardami.
+                    </p>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#595355] m-0 max-w-[690px]">
+                        Na Gotowo to zespół fachowców, którzy doskonale rozumieją, jak ważna jest jakość, terminowość oraz dobra komunikacja podczas realizacji projektu. Ich podejście opiera się na rzetelnej pracy, nowoczesnych rozwiązaniach oraz pełnym zaangażowaniu na każdym etapie realizacji. Dzięki temu klienci mogą mieć pewność, że ich przestrzeń zostanie wykończona z największą starannością i zgodnie z założeniami projektu. Współpraca z zaufanym partnerem pozwala nam zapewnić spójność całego procesu – od pierwszej koncepcji, przez projekt, aż po finalne wykończenie wnętrza. Dzięki temu nasi klienci otrzymują kompleksową usługę, w której każdy etap jest dopracowany, a efekt końcowy spełnia najwyższe oczekiwania.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Partner NA.GOTOWO — mobile *@
+    <section class="lg:hidden bg-[#f3f3f5]" aria-labelledby="partner-heading-mobile">
+        <div class="max-w-[1680px] mx-auto px-4 py-[60px]">
+            <div class="flex items-center gap-4 mb-8">
+                <hr class="flex-1 border-0 border-t border-[#c2c0c9] m-0" />
+                <img src="@partnerIcon"
+                     alt=""
+                     width="72"
+                     height="72"
+                     class="w-[72px] h-[72px] object-contain shrink-0"
+                     loading="lazy" />
+                <hr class="flex-1 border-0 border-t border-[#c2c0c9] m-0" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+                <div class="flex flex-col gap-4">
+                    <h2 id="partner-heading-mobile" class="font-barlow font-semibold text-[#151515] text-[28px] leading-[1.2] m-0 pt-3.5">
+                        Kupujesz u nas mieszkanie i potrzebujesz wykończenia pod klucz?
+                    </h2>
+                    <p class="font-inter text-[16px] leading-[1.5] text-[#151515] m-0 pb-6 max-w-[610px]">
+                        Skorzystaj z naszej usługi wykończenia pod klucz realizowanej z partnerem NA.GOTOWO, który od lat należy do najlepszych specjalistów w branży.
+                    </p>
+                    <figure class="m-0">
+                        <img src="@partnerImage"
+                             alt=""
+                             width="828"
+                             height="621"
+                             class="w-full h-auto"
+                             loading="lazy" />
+                    </figure>
+                </div>
+
+                <p class="font-inter text-[14px] sm:text-[16px] leading-[1.5] text-[#595355] m-0 max-w-[690px]">
+                    Dzięki temu odbierzesz mieszkanie w pełni przygotowane do zamieszkania, bez stresu i nadzorowania ekip. Oferujemy <strong class="font-semibold text-[#151515]">trzy pakiety wykończenia</strong>, dopasowane do różnych potrzeb i budżetów: Standard, Komfort i Premium. Każdy z nich obejmuje kompleksowe prace, wysokiej jakości materiały i możliwość personalizacji. Niezależnie od oczekiwań – każdy znajdzie coś dla siebie i może wprowadzić się do gotowego, perfekcyjnie wykończonego wnętrza.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    @* Często pojawiające się pytania *@
+    <section class="bg-[#f3f3f5]" aria-labelledby="customize-space-faq-heading">
+        <div class="max-w-[1100px] mx-auto px-4 py-8 lg:py-20">
+            <h2 id="customize-space-faq-heading" class="font-barlow font-semibold text-center text-[28px] lg:text-[44px] leading-[1.2] text-[#151515] mb-8 lg:mb-12">
+                Często pojawiające się pytania
+            </h2>
+
+            <div class="financing-faq max-w-[1000px] mx-auto bg-white rounded-[24px] overflow-hidden divide-y divide-[#c2c0c9]">
+                @foreach (var item in faqItems)
+                {
+                    <details name="customize-space-faq" class="group/faq">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 lg:px-8 lg:py-6 font-barlow font-semibold text-[18px] lg:text-[20px] leading-[1.3] text-[#151515] hover:bg-[#fafafa] transition-colors">
+                            <span class="financing-faq__question transition-colors duration-200">@item.Question</span>
+                            <span class="financing-faq__icon shrink-0 inline-flex items-center justify-center w-6 h-6 text-[#ba9e60]" aria-hidden="true">
+                                <svg class="w-4 h-4 transition-transform duration-300 ease-out" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="financing-faq__panel px-6 lg:px-8">
+                            <p class="font-inter text-[16px] lg:text-[18px] leading-[1.5] text-[#595355] m-0">
+                                @item.Answer
+                            </p>
+                        </div>
+                    </details>
+                }
+            </div>
+        </div>
+    </section>
+
+    <partial name="Shared/_CustomizeSpaceContactSection" />
+</main>
+
+@section Styles {
+    <style>
+        .financing-faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .financing-faq summary::marker {
+            display: none;
+        }
+
+        .financing-faq summary:hover .financing-faq__question,
+        .financing-faq details[open] .financing-faq__question {
+            color: #ba9e60;
+        }
+
+        .financing-faq details[open] .financing-faq__icon svg {
+            transform: rotate(180deg);
+        }
+
+        .financing-faq__panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            transition:
+                grid-template-rows 0.5s ease,
+                opacity 0.25s ease,
+                padding 0.5s ease;
+        }
+
+        .financing-faq details[open] .financing-faq__panel {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            padding-top: 0;
+            padding-bottom: 1.25rem;
+        }
+
+        @@media (min-width: 1024px) {
+            .financing-faq details[open] .financing-faq__panel {
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        .financing-faq__panel > p {
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        .customize-space-contact-form__checkbox {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #c2c0c9;
+            border-radius: 0.25rem;
+            background-color: transparent;
+        }
+
+        .customize-space-contact-form__checkbox:checked {
+            background-color: #151515;
+            border-color: #151515;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8.5L6.5 12L13 4' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0.875rem;
+        }
+    </style>
+}
