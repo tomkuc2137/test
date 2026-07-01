@@ -3,6 +3,16 @@
 @{
     ViewData["Title"] = "Dopasuj przestrzeń pod siebie";
     var heroImage = Url.Content("~/inc/img/Depositphotos_223168402_L.jpg");
+    var applicationPdf = Url.Content("~/inc/docs/WNIOSEK-O-WPROWADZENIE-ZMIAN-LOKATORSKICH-.pdf");
+
+    var tenantChangeSteps = new[]
+    {
+        new { Bg = "1-2.png", Title = "Pobierz i wypełnij wniosek", Text = "Pobierz wniosek o wprowadzenie zmian lokatorskich i uzupełnij dane kontaktowe oraz informacje o inwestycji, budynku i mieszkaniu." },
+        new { Bg = "2-1.png", Title = "Opisz proponowane zmiany", Text = "Zaznacz zakres modyfikacji dotyczących ścian działowych, instalacji elektrycznej oraz sanitarnej. Opisz każdą zmianę w sposób czytelny i szczegółowy." },
+        new { Bg = "3-1.png", Title = "Dołącz rzut lokalu", Text = "Do wniosku załącz rzut mieszkania z naniesionymi zmianami. Pamiętaj, że modyfikacje układu ścian mogą wpływać na projekt instalacji." },
+        new { Bg = "4.png", Title = "Weryfikacja przez specjalistę", Text = "Specjalista ds. zmian lokatorskich zweryfikuje wniosek pod kątem wykonalności technicznej i przekaże opinię wraz z ewentualnymi uwagami." },
+        new { Bg = "5.png", Title = "Akceptacja kosztów i realizacja", Text = "Po akceptacji kosztów związanych ze zmianami wprowadzamy modyfikacje zgodnie z ustaleniami na etapie budowy mieszkania." }
+    };
 }
 
 @section Header {
@@ -60,4 +70,217 @@
             </div>
         </div>
     </section>
+
+    @* Zmiany lokatorskie *@
+    <section id="zmiany-lokatorskie" class="scroll-mt-24 bg-[#f3f3f5]" aria-labelledby="tenant-changes-heading">
+        <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px]">
+            <div class="py-8 lg:py-12">
+                <h2 id="tenant-changes-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[42px] xl:text-[55px] leading-[1.15] flex items-center gap-4">
+                    <span class="inline-flex shrink-0 w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full bg-[#ba9e60] text-white" aria-hidden="true">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0206 32.0008C15.3885 32.0006 14.7707 31.8131 14.2453 31.4619C13.7198 31.1107 13.3102 30.6116 13.0684 30.0277C12.8265 29.4437 12.7632 28.8012 12.8865 28.1813C13.0098 27.5614 13.3141 26.9919 13.7609 26.545L24.2858 16.02L13.7609 5.4951C13.4556 5.20027 13.2121 4.84759 13.0446 4.45765C12.8771 4.0677 12.789 3.64831 12.7853 3.22392C12.7816 2.79954 12.8625 2.37867 13.0232 1.98588C13.1839 1.59308 13.4212 1.23623 13.7213 0.93613C14.0214 0.636035 14.3782 0.398711 14.771 0.238006C15.1638 0.0773003 15.5847 -0.00356709 16.0091 0.000120677C16.4335 0.00380845 16.8529 0.0919784 17.2428 0.259485C17.6327 0.426993 17.9854 0.670483 18.2803 0.975748L31.0649 13.7604C31.6641 14.3597 32.0007 15.1725 32.0007 16.02C32.0007 16.8675 31.6641 17.6803 31.0649 18.2797L18.2803 31.0643C17.681 31.6638 16.8682 32.0006 16.0206 32.0008Z"/>
+                            <path d="M3.23543 32.0008C2.60339 32.0006 1.98558 31.8131 1.4601 31.4619C0.934618 31.1107 0.525065 30.6116 0.283212 30.0277C0.0413589 29.4437 -0.0219353 28.8012 0.101332 28.1813C0.2246 27.5614 0.528896 26.9919 0.975748 26.545L11.5007 16.02L0.975748 5.4951C0.670483 5.20027 0.426993 4.84759 0.259485 4.45765C0.0919784 4.0677 0.00380845 3.64831 0.000120677 3.22392C-0.00356709 2.79954 0.0773003 2.37867 0.238006 1.98588C0.398711 1.59308 0.636035 1.23623 0.93613 0.93613C1.23623 0.636035 1.59308 0.398711 1.98588 0.238006C2.37867 0.0773003 2.79954 -0.00356709 3.22392 0.000120677C3.64831 0.00380845 4.0677 0.0919784 4.45765 0.259485C4.84759 0.426993 5.20027 0.670483 5.4951 0.975748L18.2797 13.7604C18.8789 14.3597 19.2155 15.1725 19.2155 16.02C19.2155 16.8675 18.8789 17.6803 18.2797 18.2797L5.4951 31.0643C4.89585 31.6638 4.08303 32.0006 3.23543 32.0008Z"/>
+                        </svg>
+                    </span>
+                    <span>Zmiany lokatorskie na etapie budowy</span>
+                </h2>
+            </div>
+
+            @* Desktop / tablet *@
+            <div class="hidden sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-12 pb-8 lg:pb-12">
+                <div class="flex items-start">
+                    <h3 class="font-barlow font-semibold text-[#151515] text-[24px] md:text-[36px] leading-[1.2] m-0">
+                        Oto 5 kroków do wprowadzenia zmian lokatorskich
+                    </h3>
+                </div>
+
+                <div class="tenant-changes-slider-shell relative min-w-0">
+                    <div id="tenant-changes-slider-desktop"
+                         class="splide tenant-changes-slider tenant-changes-slider--desktop"
+                         aria-label="Kroki wprowadzenia zmian lokatorskich">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                @foreach (var step in tenantChangeSteps)
+                                {
+                                    var bgUrl = Url.Content($"~/inc/img/{step.Bg}");
+                                    <li class="splide__slide">
+                                        <article class="relative min-h-[220px] lg:min-h-[260px] pl-[88px] md:pl-[120px] lg:pl-[200px]">
+                                            <div class="absolute left-0 top-0 h-full w-[72px] md:w-[100px] lg:w-[180px] bg-left bg-no-repeat bg-contain pointer-events-none opacity-90"
+                                                 style="background-image: url('@bgUrl');"
+                                                 aria-hidden="true"></div>
+                                            <h4 class="font-barlow font-semibold text-[20px] lg:text-[24px] leading-[1.3] text-[#151515] m-0 mb-4">
+                                                @step.Title
+                                            </h4>
+                                            <p class="font-inter text-[14px] lg:text-[16px] leading-[1.5] text-[#595355] m-0 max-w-[520px]">
+                                                @step.Text
+                                            </p>
+                                        </article>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Mobile *@
+            <div class="sm:hidden pb-8">
+                <h3 class="font-barlow font-semibold text-[#151515] text-[24px] leading-[1.2] mb-6">
+                    Oto 5 kroków do wprowadzenia zmian lokatorskich
+                </h3>
+
+                <div class="tenant-changes-slider-shell relative min-w-0">
+                    <div id="tenant-changes-slider-mobile"
+                         class="splide tenant-changes-slider tenant-changes-slider--mobile"
+                         aria-label="Kroki wprowadzenia zmian lokatorskich">
+                        <div class="splide__track pb-10">
+                            <ul class="splide__list">
+                                @foreach (var step in tenantChangeSteps)
+                                {
+                                    var bgUrl = Url.Content($"~/inc/img/{step.Bg}");
+                                    <li class="splide__slide">
+                                        <article class="relative min-h-[220px] pl-[88px]">
+                                            <div class="absolute left-0 top-0 h-full w-[72px] bg-left bg-no-repeat bg-contain pointer-events-none opacity-90"
+                                                 style="background-image: url('@bgUrl');"
+                                                 aria-hidden="true"></div>
+                                            <h4 class="font-barlow font-semibold text-[20px] leading-[1.3] text-[#151515] m-0 mb-3">
+                                                @step.Title
+                                            </h4>
+                                            <p class="font-inter text-[14px] leading-[1.5] text-[#595355] m-0">
+                                                @step.Text
+                                            </p>
+                                        </article>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-10 lg:pb-16">
+                <a href="@applicationPdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-8 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                    Pobierz wniosek
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm@@splidejs/splide@@4.1.4/dist/css/splide.min.css" />
+    <style>
+        .tenant-changes-slider:not(.is-initialized) .splide__slide:first-child {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .tenant-changes-slider:not(.is-initialized) .splide__slide:not(:first-child) {
+            display: none;
+        }
+
+        .tenant-changes-slider .splide__slide.is-active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .tenant-changes-slider-shell .splide__arrow {
+            width: 48px !important;
+            height: 48px !important;
+            opacity: 1 !important;
+            background: #151515 !important;
+            border: none !important;
+            border-radius: 8px !important;
+            top: auto !important;
+            bottom: -72px !important;
+            transform: none !important;
+        }
+
+        .tenant-changes-slider-shell .splide__arrow svg {
+            fill: #efeef3 !important;
+        }
+
+        .tenant-changes-slider-shell .splide__arrow--prev {
+            left: calc(50% - 56px) !important;
+        }
+
+        .tenant-changes-slider-shell .splide__arrow--next {
+            right: calc(50% - 56px) !important;
+            left: auto !important;
+        }
+
+        .tenant-changes-slider-shell .splide__pagination {
+            position: static !important;
+            margin-top: 1rem;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tenant-changes-slider-shell .splide__pagination__page {
+            background: #c2c0c9;
+            opacity: 1;
+            width: 8px;
+            height: 28px;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tenant-changes-slider-shell .splide__pagination__page.is-active {
+            background: #151515;
+            transform: none;
+        }
+
+        .tenant-changes-slider--desktop .splide__pagination {
+            margin-top: 2.5rem;
+        }
+
+        .tenant-changes-slider--mobile .splide__arrow {
+            display: none !important;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm@@splidejs/splide@@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof Splide === 'undefined') {
+                return;
+            }
+
+            var desktopRoot = document.getElementById('tenant-changes-slider-desktop');
+            if (desktopRoot) {
+                new Splide(desktopRoot, {
+                    type: 'fade',
+                    rewind: true,
+                    speed: 400,
+                    arrows: true,
+                    pagination: true,
+                    drag: true,
+                    perPage: 1,
+                    perMove: 1
+                }).mount();
+            }
+
+            var mobileRoot = document.getElementById('tenant-changes-slider-mobile');
+            if (mobileRoot) {
+                new Splide(mobileRoot, {
+                    type: 'fade',
+                    rewind: true,
+                    speed: 400,
+                    arrows: false,
+                    pagination: true,
+                    drag: true,
+                    perPage: 1,
+                    perMove: 1
+                }).mount();
+            }
+        });
+    </script>
+}
