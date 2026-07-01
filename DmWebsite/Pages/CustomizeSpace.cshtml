@@ -84,6 +84,30 @@
     var vimeoBackgroundVideoUrl = "https://player.vimeo.com/video/1174678417?background=1&autoplay=1&muted=1&loop=1";
     var partnerImage = Url.Content("~/inc/img/Image-10.png");
     var partnerIcon = Url.Content("~/inc/img/Icon-Box-2.png");
+
+    var faqItems = new[]
+    {
+        new
+        {
+            Question = "Ile trwa typowe wykończenie pod klucz?",
+            Answer = "Czas realizacji wykończenia „pod klucz” zależy przede wszystkim od wielkości nieruchomości, zakresu prac oraz stopnia skomplikowania projektu. W przypadku standardowego mieszkania proces ten najczęściej trwa od kilku do kilkunastu tygodni. Na początku przygotowywany jest szczegółowy harmonogram prac, dzięki czemu każdy etap realizacji jest dobrze zaplanowany i przebiega w odpowiedniej kolejności. Dbamy o sprawną koordynację wszystkich działań, aby cały proces przebiegał możliwie szybko, ale przede wszystkim solidnie i bez kompromisów w kwestii jakości wykonania."
+        },
+        new
+        {
+            Question = "Jakie są pakiety wykończenia? Ile to kosztuje?",
+            Answer = "Oferujemy różne warianty wykończenia, które można dopasować do indywidualnych potrzeb, stylu oraz budżetu. Pakiety mogą obejmować zarówno podstawowe rozwiązania, idealne dla osób szukających funkcjonalnego i estetycznego wykończenia, jak i bardziej rozbudowane opcje z materiałami premium oraz dodatkowymi elementami aranżacyjnymi. Każdy projekt jest jednak traktowany indywidualnie – dlatego po wstępnej konsultacji przygotowujemy szczegółową ofertę wraz z wyceną. Dzięki temu dokładnie wiesz, co wchodzi w zakres prac i jakie będą koszty realizacji."
+        },
+        new
+        {
+            Question = "Skąd mam pewność, że wszystko zostanie zrobione z najwyższą jakością?",
+            Answer = "Najważniejszym elementem naszej pracy jest jakość wykonania oraz dbałość o detale. Współpracujemy ze sprawdzonymi fachowcami oraz korzystamy z materiałów renomowanych producentów. Każdy etap realizacji jest nadzorowany i kontrolowany, aby mieć pewność, że prace są wykonywane zgodnie z projektem i najwyższymi standardami. Stawiamy również na transparentność – na bieżąco informujemy o postępach prac, a w razie potrzeby konsultujemy wszelkie decyzje. Dzięki temu nasi klienci mają pełną kontrolę nad realizacją i poczucie bezpieczeństwa na każdym etapie współpracy."
+        },
+        new
+        {
+            Question = "Czy po etapie wykonawczym przysługują mi poprawki?",
+            Answer = "Tak – po zakończeniu wszystkich prac następuje etap odbioru, podczas którego wspólnie sprawdzamy wykonanie całej realizacji. Jeśli pojawią się jakiekolwiek elementy wymagające korekty lub dopracowania, zostają one odnotowane i poprawione. Zależy nam na tym, aby finalny efekt był w pełni zgodny z ustaleniami oraz spełniał Twoje oczekiwania. Naszym celem jest oddanie przestrzeni, która jest nie tylko estetyczna i funkcjonalna, ale także dopracowana w każdym szczególe."
+        }
+    };
 }
 
 @section Header {
@@ -408,4 +432,85 @@
             </div>
         </div>
     </section>
+
+    @* Często pojawiające się pytania *@
+    <section class="bg-[#f3f3f5]" aria-labelledby="customize-space-faq-heading">
+        <div class="max-w-[1100px] mx-auto px-4 py-8 lg:py-20">
+            <h2 id="customize-space-faq-heading" class="font-barlow font-semibold text-center text-[28px] lg:text-[44px] leading-[1.2] text-[#151515] mb-8 lg:mb-12">
+                Często pojawiające się pytania
+            </h2>
+
+            <div class="financing-faq max-w-[1000px] mx-auto bg-white rounded-[24px] overflow-hidden divide-y divide-[#c2c0c9]">
+                @foreach (var item in faqItems)
+                {
+                    <details name="customize-space-faq" class="group/faq">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 lg:px-8 lg:py-6 font-barlow font-semibold text-[18px] lg:text-[20px] leading-[1.3] text-[#151515] hover:bg-[#fafafa] transition-colors">
+                            <span class="financing-faq__question transition-colors duration-200">@item.Question</span>
+                            <span class="financing-faq__icon shrink-0 inline-flex items-center justify-center w-6 h-6 text-[#ba9e60]" aria-hidden="true">
+                                <svg class="w-4 h-4 transition-transform duration-300 ease-out" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </summary>
+                        <div class="financing-faq__panel px-6 lg:px-8">
+                            <p class="font-inter text-[16px] lg:text-[18px] leading-[1.5] text-[#595355] m-0">
+                                @item.Answer
+                            </p>
+                        </div>
+                    </details>
+                }
+            </div>
+        </div>
+    </section>
 </main>
+
+@section Styles {
+    <style>
+        .financing-faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .financing-faq summary::marker {
+            display: none;
+        }
+
+        .financing-faq summary:hover .financing-faq__question,
+        .financing-faq details[open] .financing-faq__question {
+            color: #ba9e60;
+        }
+
+        .financing-faq details[open] .financing-faq__icon svg {
+            transform: rotate(180deg);
+        }
+
+        .financing-faq__panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+            transition:
+                grid-template-rows 0.5s ease,
+                opacity 0.25s ease,
+                padding 0.5s ease;
+        }
+
+        .financing-faq details[open] .financing-faq__panel {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            padding-top: 0;
+            padding-bottom: 1.25rem;
+        }
+
+        @@media (min-width: 1024px) {
+            .financing-faq details[open] .financing-faq__panel {
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        .financing-faq__panel > p {
+            overflow: hidden;
+            min-height: 0;
+        }
+    </style>
+}
