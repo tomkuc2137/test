@@ -1,0 +1,126 @@
+@model IReadOnlyList<DmWebsite.Pages.Index.InvestmentSliderItemVm>
+
+@if (Model.Count > 0)
+{
+<section class="bg-white py-16 lg:py-24" aria-labelledby="current-investments-heading">
+    <div class="max-w-[1600px] w-full mx-auto px-4 xl:px-8">
+        <h2 id="current-investments-heading" class="font-barlow text-[32px] lg:text-[40px] font-bold text-[#151515] mb-12 tracking-tight">
+            Aktualne inwestycje
+            <mark class="bg-transparent text-[#ba9e60]">@Model.Count</mark>
+        </h2>
+
+        <div class="future-estates-slider-shell relative">
+            <div class="splide-slider future-estates-slider splide min-w-0 w-full"
+                 aria-label="Aktualne inwestycje"
+                 data-splide-arrows="true"
+                 data-splide-pagination="true">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        @foreach (var slide in Model)
+                        {
+                            var investment = slide.Investment;
+                            var stats = slide.Stats;
+                            var bgUrl = slide.ImageUrl ?? Url.Content("~/inc/img/default-placeholder.jpg");
+
+                            var areaText = stats.MinArea > 0 || stats.MaxArea > 0
+                                ? Math.Floor(stats.MinArea) == Math.Floor(stats.MaxArea)
+                                    ? $"{stats.MinArea:N0} m²"
+                                    : $"{stats.MinArea:N0} - {stats.MaxArea:N0} m²"
+                                : "-";
+
+                            var roomsText = stats.MinRooms > 0 || stats.MaxRooms > 0
+                                ? stats.MinRooms == stats.MaxRooms
+                                    ? $"{stats.MinRooms}"
+                                    : $"{stats.MinRooms} - {stats.MaxRooms}"
+                                : "-";
+
+                            var floorsText = stats.MinFloor > 0 || stats.MaxFloor > 0
+                                ? stats.MinFloor == stats.MaxFloor
+                                    ? $"{stats.MinFloor}"
+                                    : $"{stats.MinFloor} - {stats.MaxFloor}"
+                                : "-";
+
+                            <li class="splide__slide h-auto">
+                                <article class="flex flex-col bg-white border border-[#e4e0f2] rounded-[20px] overflow-hidden h-full shadow-[0_4px_20px_-10px_rgba(0,0,0,0.08)]">
+                                    <div class="relative h-[320px] bg-cover bg-center flex flex-col justify-between"
+                                         style="background-image: url('@bgUrl');">
+                                        <div class="absolute inset-0 bg-black/40"></div>
+
+                                        <div class="relative z-10 p-6">
+                                            @if (slide.IsSoldOut)
+                                            {
+                                                <span class="bg-white/90 backdrop-blur-sm text-black text-[13px] font-bold px-4 py-2 rounded-md uppercase tracking-wider">
+                                                    WYPRZEDANE
+                                                </span>
+                                            }
+                                        </div>
+
+                                        <div class="relative z-10 w-full bg-black/60 backdrop-blur-md p-4 grid grid-cols-3 divide-x divide-white/20 text-white text-center">
+                                            <div class="px-2">
+                                                <p class="font-bold text-[14px] lg:text-[16px]">@areaText</p>
+                                                <p class="text-[10px] text-gray-300 uppercase tracking-widest mt-1">Metraż mieszkań</p>
+                                            </div>
+                                            <div class="px-2">
+                                                <p class="font-bold text-[14px] lg:text-[16px]">@roomsText</p>
+                                                <p class="text-[10px] text-gray-300 uppercase tracking-widest mt-1">Pokoje</p>
+                                            </div>
+                                            <div class="px-2">
+                                                <p class="font-bold text-[14px] lg:text-[16px]">@floorsText</p>
+                                                <p class="text-[10px] text-gray-300 uppercase tracking-widest mt-1">Piętra</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-8 flex flex-col flex-1">
+                                        <h3 class="font-barlow text-[26px] font-bold text-[#151515] mb-3 leading-tight">
+                                            @investment.Name
+                                        </h3>
+
+                                        <div class="flex items-center text-[#787878] mb-8">
+                                            @if (!string.IsNullOrWhiteSpace(investment.Street))
+                                            {
+                                                <span class="text-[16px] flex items-center">
+                                                    @investment.Street
+                                                    <svg class="w-1 h-1 mx-2 fill-current text-[#ba9e60]" viewBox="0 0 4 4" aria-hidden="true">
+                                                        <rect width="4" height="4" rx="2" />
+                                                    </svg>
+                                                </span>
+                                            }
+                                            <span class="text-[16px]">@investment.City</span>
+                                        </div>
+
+                                        <div class="mt-auto mb-8">
+                                            <div class="flex justify-between items-end mb-3 text-[14px]">
+                                                <span class="font-bold text-[#151515] uppercase tracking-wide">
+                                                    <mark class="bg-transparent text-[#151515] font-bold">@stats.TotalAvailableCount/@stats.TotalPropertiesCount</mark>
+                                                    dostępnych mieszkań
+                                                </span>
+                                                @if (slide.IsSoldOut)
+                                                {
+                                                    <span class="text-[#ba9e60] font-bold uppercase text-[12px] tracking-wider">
+                                                        wyprzedane
+                                                    </span>
+                                                }
+                                            </div>
+                                            <div class="w-full bg-[#efeef3] rounded-full h-1.5 overflow-hidden">
+                                                <div class="bg-[#ba9e60] h-1.5 rounded-full transition-all duration-1000"
+                                                     style="width: @(slide.ProgressPercent)%"></div>
+                                            </div>
+                                        </div>
+
+                                        <a asp-page="/Investment"
+                                           asp-route-slug="@investment.Slug"
+                                           class="block w-full text-center bg-transparent border-[1.5px] border-[#151515] text-[#151515] font-semibold text-[16px] py-4 rounded-[12px] hover:bg-[#151515] hover:text-white transition-colors duration-300">
+                                            Więcej szczegółów
+                                        </a>
+                                    </div>
+                                </article>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
