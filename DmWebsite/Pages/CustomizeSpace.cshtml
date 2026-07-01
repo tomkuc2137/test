@@ -1,0 +1,63 @@
+@page "/dopasuj-przestrzen-pod-siebie"
+@model DmWebsite.Pages.CustomizeSpaceModel
+@{
+    ViewData["Title"] = "Dopasuj przestrzeń pod siebie";
+    var heroImage = Url.Content("~/inc/img/Depositphotos_223168402_L.jpg");
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage" />
+}
+
+<main class="bg-[#f3f3f5]">
+    <section class="relative bg-[#f3f3f5] overflow-visible" aria-labelledby="customize-space-heading">
+        <div class="flex flex-col lg:block">
+            <div class="relative lg:absolute lg:top-0 lg:right-0 lg:left-auto w-full lg:w-[48vw] xl:w-[52vw] min-h-[167px] lg:min-h-[460px] xl:min-h-[500px] rounded-l-[40px] overflow-hidden bg-cover bg-center z-[2] lg:-mb-[40px] order-1 lg:order-none"
+                 style="background-image: url('@heroImage');"
+                 aria-hidden="true">
+            </div>
+
+            <div class="relative z-[3] order-2 lg:order-none">
+                <div class="max-w-[1680px] mx-auto px-4 lg:px-0">
+                    <div class="flex flex-col lg:flex-row lg:min-h-[460px] xl:min-h-[500px]">
+                        <div class="flex flex-col justify-center items-center lg:w-[42%] xl:w-[40%] py-8 lg:py-16 lg:pl-4 xl:pl-[130px] lg:pr-6">
+                            <h1 id="customize-space-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] text-center w-full">
+                                Dopasuj przestrzeń pod siebie
+                            </h1>
+
+                            @* Desktop / tablet: przyciski w linii *@
+                            <div class="hidden lg:flex flex-wrap gap-3 mt-8 justify-center w-full">
+                                <a href="#zmiany-lokatorskie"
+                                   class="inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Zmiany lokatorskie
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="hidden xl:inline-flex items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Wykończenie wnętrza pod klucz
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="inline-flex xl:hidden items-center justify-center font-inter text-[16px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 border border-[#c2c0c9] hover:opacity-90 transition-opacity">
+                                    Wykończenie wnętrza
+                                </a>
+                            </div>
+
+                            @* Mobile: przyciski pełnej szerokości *@
+                            <div class="flex lg:hidden flex-col gap-2 mt-6 w-full">
+                                <a href="#zmiany-lokatorskie"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Zmiany lokatorskie
+                                </a>
+                                <a href="#mieszkanie-pod-klucz"
+                                   class="block w-full text-center font-inter text-[18px] leading-tight text-[#efeef3] bg-[#151515] rounded-lg py-4 px-6 hover:opacity-90 transition-opacity">
+                                    Wykończenie pod klucz
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hidden lg:block lg:flex-1 shrink-0 pointer-events-none" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
