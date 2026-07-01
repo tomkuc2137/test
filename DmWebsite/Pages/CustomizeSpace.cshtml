@@ -80,6 +80,8 @@
             Text = "Gdy projekt jest dopracowany w każdym detalu, rozpoczyna się etap realizacji. To właśnie wtedy wizja zmienia się w rzeczywistość. Koordynujemy wszystkie prace wykończeniowe, dbamy o jakość wykonania oraz pilnujemy, aby każdy element został zrealizowany zgodnie z projektem. Na bieżąco monitorujemy postęp prac i rozwiązujemy ewentualne wyzwania, tak aby cały proces przebiegał sprawnie i bez stresu dla Ciebie. Finałem jest moment odbioru – chwila, w której możesz zobaczyć gotową przestrzeń i odebrać klucze do miejsca, które zostało stworzone dokładnie z myślą o Tobie."
         }
     };
+
+    var vimeoBackgroundVideoUrl = "https://player.vimeo.com/video/1174678417?background=1&autoplay=1&muted=1&loop=1";
 }
 
 @section Header {
@@ -328,5 +330,13 @@
                 }
             </div>
         </div>
+    </section>
+
+    @* Film Vimeo w tle *@
+    <section class="relative w-full h-[300px] md:h-[500px] overflow-hidden" aria-hidden="true">
+        <iframe src="@vimeoBackgroundVideoUrl"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-w-[177.78vh] min-h-[100vh] border-0 pointer-events-none"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="video"></iframe>
     </section>
 </main>
