@@ -1,0 +1,36 @@
+<div id="customize-space-gallery-modal"
+     class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/90 p-4"
+     role="dialog"
+     aria-modal="true"
+     aria-hidden="true"
+     aria-label="Podgląd zdjęcia galerii">
+    <button type="button"
+            class="close-modal absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+            aria-label="Zamknij">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <button type="button"
+            class="prev-btn absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+            aria-label="Poprzednie zdjęcie">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <button type="button"
+            class="next-btn absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+            aria-label="Następne zdjęcie">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <img class="modal-image max-h-[85vh] max-w-full object-contain"
+         src=""
+         alt="" />
+
+    <div class="lightbox-pagination absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2"></div>
+</div>

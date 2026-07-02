@@ -358,6 +358,8 @@
         </div>
     </section>
 
+    <partial name="Shared/_CustomizeSpaceRealizationsGallery" model="Model" />
+
     @* Film Vimeo w tle *@
     <section class="relative w-full h-[300px] md:h-[500px] overflow-hidden" aria-hidden="true">
         <iframe src="@vimeoBackgroundVideoUrl"
@@ -465,6 +467,12 @@
 
     <partial name="Shared/_CustomizeSpaceContactSection" />
 </main>
+
+<partial name="Shared/_GalleryLightboxModal" />
+
+@section Scripts {
+    <script type="module" src="~/js/main.js"></script>
+}
 
 @section Styles {
     <style>

@@ -1,0 +1,37 @@
+@model DmWebsite.Pages.CustomizeSpaceModel
+
+@if (Model.GalleryImages.Count == 0)
+{
+    return;
+}
+
+<section id="realizations-gallery"
+         class="bg-[#f3f3f5] not-prose pb-12 lg:pb-15"
+         aria-labelledby="realizations-gallery-heading">
+    <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px]">
+        <h2 id="realizations-gallery-heading"
+            class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[42px] xl:text-[55px] leading-[1.15] mb-8 lg:mb-10">
+            Przykładowe realizacje pod klucz
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+             aria-label="Galeria zdjęć realizacji">
+            @foreach (var image in Model.GalleryImages)
+            {
+                <div class="gallery-item group relative aspect-[408/270] overflow-hidden rounded-lg cursor-pointer"
+                     role="button"
+                     tabindex="0"
+                     data-full-src="@image.FullJpg"
+                     aria-label="Powiększ zdjęcie: @image.Alt">
+                    <picture>
+                        <source srcset="@image.ThumbWebp" type="image/webp" />
+                        <img src="@image.ThumbJpg"
+                             alt="@image.Alt"
+                             class="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                             loading="lazy" />
+                    </picture>
+                </div>
+            }
+        </div>
+    </div>
+</section>
