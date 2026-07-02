@@ -1,0 +1,158 @@
+@{
+    var privacyPolicyUrl = "/polityka-prywatnosci";
+}
+
+<section id="kontakt"
+         class="skup-gruntow-contact relative z-[9] bg-white rounded-b-[40px] overflow-hidden scroll-mt-24"
+         aria-labelledby="skup-gruntow-contact-heading">
+    <div class="max-w-[1140px] mx-auto px-4 pt-8 pb-2.5 md:pt-20 md:pb-20">
+        <h2 id="skup-gruntow-contact-heading"
+            class="font-barlow font-semibold text-[#151515] text-[36px] leading-[1.2] text-center m-0">
+            Masz taką działkę?<br />
+            Wypełnij formularz lub zadzwoń
+        </h2>
+
+        <form method="post" class="skup-gruntow-form mt-8 md:mt-10" novalidate>
+            <h3 class="skup-gruntow-form__section-title font-barlow font-bold text-[#151515] text-[18px] leading-[2] border-b border-[#c2c0c9] m-0 pb-1 mb-6">
+                Dane dotyczące działki
+            </h3>
+
+            <div class="space-y-6 mb-8">
+                <div>
+                    <label for="plot-location" class="block font-inter text-[16px] text-[#151515] mb-3">
+                        Gdzie znajduje się Twoja działka? <span class="text-[#151515]">*</span>
+                    </label>
+                    <input type="text"
+                           id="plot-location"
+                           name="Location"
+                           required
+                           placeholder="np. Grabówka"
+                           class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                </div>
+
+                <div class="space-y-4">
+                    <label class="skup-gruntow-form__checkbox flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox"
+                               name="HasRoadAccess"
+                               value="true"
+                               class="skup-gruntow-form__checkbox-input mt-0.5 shrink-0" />
+                        <span class="font-inter text-[16px] text-[#595355] leading-[1.5]">
+                            Potwierdzam dostęp do drogi publicznej
+                        </span>
+                    </label>
+
+                    <label class="skup-gruntow-form__checkbox flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox"
+                               name="HasResidentialZoning"
+                               value="true"
+                               class="skup-gruntow-form__checkbox-input mt-0.5 shrink-0" />
+                        <span class="font-inter text-[16px] text-[#595355] leading-[1.5]">
+                            Potwierdzam, że działka jest pod zabudowę mieszkaniową
+                        </span>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="plot-area" class="block font-inter text-[16px] text-[#151515] mb-3">
+                        Ile m² ma Twoja działka? <span class="text-[#151515]">*</span>
+                    </label>
+                    <input type="number"
+                           id="plot-area"
+                           name="Area"
+                           required
+                           min="0"
+                           step="1"
+                           placeholder="np. 2000"
+                           class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                </div>
+
+                <div>
+                    <label for="plot-price" class="block font-inter text-[16px] text-[#151515] mb-3">
+                        Podaj propozycję cenową <span class="text-[#151515]">*</span>
+                    </label>
+                    <input type="number"
+                           id="plot-price"
+                           name="Price"
+                           required
+                           min="0"
+                           step="1"
+                           placeholder="np. 100000"
+                           class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                </div>
+            </div>
+
+            <h3 class="skup-gruntow-form__section-title font-barlow font-bold text-[#151515] text-[18px] leading-[2] border-b border-[#c2c0c9] m-0 pb-1 mb-6">
+                Dane kontaktowe
+            </h3>
+
+            <div class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contact-first-name" class="block font-inter text-[16px] text-[#151515] mb-3">Twoje imię</label>
+                        <input type="text"
+                               id="contact-first-name"
+                               name="FirstName"
+                               autocomplete="given-name"
+                               placeholder="np. Kamil"
+                               class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                    </div>
+                    <div>
+                        <label for="contact-last-name" class="block font-inter text-[16px] text-[#151515] mb-3">Twoje nazwisko</label>
+                        <input type="text"
+                               id="contact-last-name"
+                               name="LastName"
+                               autocomplete="family-name"
+                               placeholder="np. Kowalski"
+                               class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="contact-email" class="block font-inter text-[16px] text-[#151515] mb-3">
+                        Twój adres e-mail <span class="text-[#151515]">*</span>
+                    </label>
+                    <input type="email"
+                           id="contact-email"
+                           name="Email"
+                           required
+                           autocomplete="email"
+                           placeholder="np. kamil@gmail.com"
+                           class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                </div>
+
+                <div>
+                    <label for="contact-phone" class="block font-inter text-[16px] text-[#151515] mb-3">
+                        Nr telefonu do kontaktu <span class="text-[#151515]">*</span>
+                    </label>
+                    <input type="tel"
+                           id="contact-phone"
+                           name="Phone"
+                           required
+                           autocomplete="tel"
+                           placeholder="np. 123 456 789"
+                           class="skup-gruntow-form__input w-full font-inter text-[16px] text-[#151515] border border-[#dddddd] rounded px-6 py-4 placeholder:font-light placeholder:text-[#8f8f8f] focus:outline-none focus:border-[#151515]" />
+                </div>
+
+                <label class="skup-gruntow-form__checkbox flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox"
+                           name="PrivacyConsent"
+                           value="true"
+                           required
+                           class="skup-gruntow-form__checkbox-input mt-1 shrink-0" />
+                    <span class="font-inter font-light text-[16px] text-[#595355] leading-[1.5]">
+                        Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z
+                        <a href="@privacyPolicyUrl" class="text-[#595355] underline hover:no-underline">Polityką Prywatności</a>.
+                        <span class="text-[#151515]">*</span>
+                    </span>
+                </label>
+
+                <div class="pt-2">
+                    <button type="submit"
+                            class="skup-gruntow-form__submit w-full md:w-auto font-inter font-normal text-[18px] text-[#efeef3] bg-[#151515] rounded-lg py-5 px-12 hover:opacity-90 transition-opacity">
+                        Wyślij wiadomość
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
