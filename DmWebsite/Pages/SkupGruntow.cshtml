@@ -1,0 +1,128 @@
+@page "/skup-gruntow"
+@model DmWebsite.Pages.SkupGruntowModel
+@{
+    ViewData["Title"] = "Skup gruntów";
+    var heroImage = Url.Content("~/inc/img/Image-15.png");
+
+    var plotCriteria = new[]
+    {
+        new
+        {
+            Icon = "area-floor-size-icon-1.svg",
+            IconWidth = 77,
+            IconHeight = 77,
+            Text = "wielkość działki co najmniej 2000m²"
+        },
+        new
+        {
+            Icon = "Frame.png",
+            IconWidth = 77,
+            IconHeight = 77,
+            Text = "w Białymstoku i okolicach (+10km)"
+        },
+        new
+        {
+            Icon = "car-driving-on-road-icon-1.png",
+            IconWidth = 77,
+            IconHeight = 73,
+            Text = "z dostępem do drogi publicznej"
+        },
+        new
+        {
+            Icon = "Frame-1.png",
+            IconWidth = 88,
+            IconHeight = 88,
+            Text = "działka pod zabudowę mieszkaniową"
+        }
+    };
+}
+
+@section Header {
+    <partial name="Shared/_HeaderMainPage" />
+}
+
+<main class="bg-white">
+    @* Hero: tytuł + zdjęcie *@
+    <section class="relative bg-white overflow-visible" aria-labelledby="skup-gruntow-heading">
+        <div class="flex flex-col lg:block">
+            <div class="relative lg:absolute lg:top-0 lg:right-0 lg:left-auto w-full lg:w-[48vw] xl:w-[52vw] min-h-[167px] lg:min-h-[460px] xl:min-h-[500px] rounded-l-[40px] overflow-hidden bg-cover bg-center z-[2] lg:-mb-[40px] order-1 lg:order-none"
+                 style="background-image: url('@heroImage');"
+                 aria-hidden="true">
+            </div>
+
+            <div class="relative z-[3] order-2 lg:order-none">
+                <div class="max-w-[1680px] mx-auto px-4 lg:px-0">
+                    <div class="flex flex-col lg:flex-row lg:min-h-[520px] xl:min-h-[580px]">
+                        <div class="flex flex-col justify-center items-center lg:w-[42%] xl:w-[40%] py-8 lg:py-16 lg:pl-4 xl:pl-[130px] lg:pr-6">
+                            <h1 id="skup-gruntow-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[55px] xl:text-[72px] leading-[1.1] text-center w-full">
+                                Skupujemy grunty w Białymstoku i okolicach
+                            </h1>
+                        </div>
+
+                        <div class="hidden lg:block lg:flex-1 shrink-0 pointer-events-none" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Poszukujemy działek *@
+    <section id="szczegoly" class="bg-white scroll-mt-24" aria-labelledby="plot-criteria-heading">
+        <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px] py-12 lg:py-16">
+            <h2 id="plot-criteria-heading" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[36px] xl:text-[44px] leading-[1.2] mb-10 lg:mb-14">
+                Poszukujemy działek
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
+                @foreach (var item in plotCriteria)
+                {
+                    var iconUrl = Url.Content($"~/inc/img/{item.Icon}");
+                    <article class="flex flex-row items-start gap-4 sm:gap-5">
+                        <figure class="shrink-0 m-0">
+                            <img src="@iconUrl"
+                                 alt=""
+                                 width="@item.IconWidth"
+                                 height="@item.IconHeight"
+                                 class="w-[77px] h-auto max-h-[88px] object-contain"
+                                 loading="lazy"
+                                 decoding="async" />
+                        </figure>
+                        <p class="font-inter text-[16px] lg:text-[18px] leading-[1.5] text-[#151515] m-0 pt-1">
+                            @item.Text
+                        </p>
+                    </article>
+                }
+            </div>
+        </div>
+    </section>
+
+    @* Proces odkupienia działki — desktop / tablet *@
+    <section class="hidden md:block bg-[#f3f3f5]" aria-labelledby="plot-process-heading-desktop">
+        <div class="max-w-[1680px] mx-auto px-4 lg:px-8 xl:px-[130px] py-12 lg:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <h2 id="plot-process-heading-desktop" class="font-barlow font-semibold text-[#151515] text-[28px] md:text-[36px] xl:text-[44px] leading-[1.2] m-0">
+                    Proces odkupienia działki
+                </h2>
+
+                <div class="min-w-0">
+                    <p class="font-inter text-[16px] text-[#595355] m-0">[smartslider3 slider="5"]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @* Proces odkupienia działki — mobile *@
+    <section class="md:hidden bg-[#f3f3f5]" aria-labelledby="plot-process-heading-mobile">
+        <div class="max-w-[1680px] mx-auto px-4 py-12">
+            <div class="flex flex-col gap-6">
+                <h2 id="plot-process-heading-mobile" class="font-barlow font-semibold text-[#151515] text-[28px] leading-[1.2] m-0">
+                    Proces odkupienia działki
+                </h2>
+
+                <div class="min-w-0">
+                    <p class="font-inter text-[16px] text-[#595355] m-0">[smartslider3 slider="9"]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
