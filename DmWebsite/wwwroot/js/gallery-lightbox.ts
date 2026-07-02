@@ -44,6 +44,10 @@ class GalleryLightbox {
         );
 
         this.images = Array.from(items)
+            .filter(item => {
+                const list = item.closest('ul');
+                return !list || list.offsetParent !== null;
+            })
             .map(item => ({
                 src: item.dataset.fullSrc || '',
                 alt: item.querySelector('img')?.alt || ''
