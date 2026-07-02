@@ -1,0 +1,77 @@
+@model DmWebsite.Pages.CustomizeSpaceModel
+
+@if (Model.GalleryImages.Count == 0)
+{
+    return;
+}
+
+<section id="realizations-gallery"
+         class="realizations-gallery bg-[#efeef3] not-prose"
+         aria-labelledby="realizations-gallery-heading">
+    <div class="realizations-gallery__inner max-w-[1680px] mx-auto px-4 pt-8 pb-12 md:pt-[60px] md:pb-20">
+        <h2 id="realizations-gallery-heading"
+            class="realizations-gallery__heading font-barlow font-semibold text-[#151515] text-[36px] leading-[1.2] text-center mb-16">
+            Przykładowe realizacje pod klucz
+        </h2>
+
+        @* Desktop / tablet (≥768px) — siatka 4 kolumn jak Kadence masonry *@
+        <ul class="realizations-gallery__grid hidden md:flex md:flex-wrap md:-mx-[7.5px] list-none p-0 m-0"
+            aria-label="Galeria zdjęć realizacji">
+            @foreach (var image in Model.GalleryImages)
+            {
+                <li class="realizations-gallery__item w-1/4 p-[7.5px]">
+                    <figure class="gallery-item m-0"
+                            role="button"
+                            tabindex="0"
+                            data-full-src="@image.FullJpg"
+                            aria-label="Powiększ zdjęcie: @image.Alt">
+                        <div class="realizations-gallery__image-wrap relative overflow-hidden w-full max-w-[1024px] mx-auto">
+                            <div class="relative w-full pb-[66%]">
+                                <picture class="absolute inset-0 block h-full w-full">
+                                    <source srcset="@image.ThumbWebp" type="image/webp" />
+                                    <img src="@image.ThumbJpg"
+                                         alt="@image.Alt"
+                                         width="1024"
+                                         height="684"
+                                         class="absolute inset-0 h-full w-full object-cover"
+                                         loading="lazy"
+                                         decoding="async" />
+                                </picture>
+                            </div>
+                        </div>
+                    </figure>
+                </li>
+            }
+        </ul>
+
+        @* Mobile (<768px) — jedna kolumna jak Kadence grid *@
+        <ul class="realizations-gallery__stack md:hidden flex flex-col -mx-[7.5px] list-none p-0 m-0"
+            aria-label="Galeria zdjęć realizacji">
+            @foreach (var image in Model.GalleryImages)
+            {
+                <li class="realizations-gallery__item p-[7.5px]">
+                    <figure class="gallery-item m-0"
+                            role="button"
+                            tabindex="0"
+                            data-full-src="@image.FullJpg"
+                            aria-label="Powiększ zdjęcie: @image.Alt">
+                        <div class="realizations-gallery__image-wrap relative overflow-hidden w-full">
+                            <div class="relative w-full pb-[66.67%]">
+                                <picture class="absolute inset-0 block h-full w-full">
+                                    <source srcset="@image.ThumbWebp" type="image/webp" />
+                                    <img src="@image.ThumbJpg"
+                                         alt="@image.Alt"
+                                         width="1024"
+                                         height="684"
+                                         class="absolute inset-0 h-full w-full object-cover"
+                                         loading="lazy"
+                                         decoding="async" />
+                                </picture>
+                            </div>
+                        </div>
+                    </figure>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
